@@ -64,13 +64,14 @@ class GoalsTableViewController: UITableViewController {
                 }
                 do {
                     if let json = response.result.value {
+                        print(json)
                         let goal = try Goal(json)
                         
                         cachedGoals = cachedGoals.filter { $0.id != goal.id }
                         cachedGoals.append(goal)
                     }
                 } catch {
-                    print("Could not parse response")
+                    print(error)
                 }
                 completion()
         }
@@ -123,17 +124,16 @@ class GoalsTableViewController: UITableViewController {
         if let t = goals {
             let goal = cachedGoals.first(where: {$0.id == t.ids[indexPath.row]})
             cell.name.text = goal?.name
-            cell.location.text = goal?.location
-            if let count = goal?.participantIds.count {
-                if (count == 1) { cell.participants.text = "\(count) Participant" }
-                else { cell.participants.text = "\(count) Participants" }
+            if let progress = goal?.progress {
+                cell.progress.text = "\(String(progress))%"
             }
+            cell.participants.text = "1 Participant"
             cell.goalImage.layer.borderWidth = 1
             cell.goalImage.layer.masksToBounds = false
             cell.goalImage.layer.borderColor = UIColor.black.cgColor
             cell.goalImage.layer.cornerRadius = cell.goalImage.frame.height/2
             cell.goalImage.clipsToBounds = true
-            if let imagePath = goal?.imagePaths[0] {
+            if let imagePath = goal?.image[0] {
                 let placeholder = UIImage(named: "placeholder")
                 cell.goalImage.imageFromServerURL(imagePath, placeHolder: placeholder)
             }
@@ -153,7 +153,7 @@ class GoalsTableViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow{
             let goalID = goals?.ids[indexPath.row]
             if let goalVC = segue.destination as? GoalViewController {
-                goalVC.eventId = goalID
+                goalVC.goalID = goalID
             }
         }
     }

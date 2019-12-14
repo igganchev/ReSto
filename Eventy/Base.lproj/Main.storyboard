@@ -259,9 +259,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="goalImage" destination="DXJ-Ge-5pg" id="ajV-DO-wNj"/>
-                                    <outlet property="location" destination="RCq-Or-fzv" id="xQY-gQ-lho"/>
                                     <outlet property="name" destination="hdm-7J-T0b" id="ZdV-9x-hmr"/>
                                     <outlet property="participants" destination="4mf-NI-bkD" id="npZ-1o-kNA"/>
+                                    <outlet property="progress" destination="RCq-Or-fzv" id="xQY-gQ-lho"/>
                                     <segue destination="k8F-WD-est" kind="show" id="RC3-Eb-KzJ"/>
                                 </connections>
                             </tableViewCell>
@@ -367,9 +367,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageTableView" destination="4VR-En-QrJ" id="GcY-Op-Dt2"/>
-                        <outlet property="locationLabel" destination="oSp-xf-NiR" id="b8q-27-eQ0"/>
                         <outlet property="mainImage" destination="Va0-Gy-3aE" id="hhr-wb-A6y"/>
                         <outlet property="navigationBar" destination="7ai-tz-1Eh" id="A2Q-ph-6SM"/>
+                        <outlet property="progressLabel" destination="oSp-xf-NiR" id="b8q-27-eQ0"/>
                         <outlet property="titleLabel" destination="Fay-zc-iJR" id="eGv-V0-O1i"/>
                     </connections>
                 </viewController>

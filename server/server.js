@@ -42,34 +42,28 @@ var goals = [
     {
         "name": "New car",
         "id": 1,
-        "location" : "Sofia",
+        "progress" : 18,
         "created-by" : 1,
-        "participants": [1],
-        "images": [
-            "http://images.mentalfloss.com/sites/default/files/styles/mf_image_3x2/public/beerfest.png?itok=y9cLMuKD&resize=1100x740",
-            "https://beerfests.com/laravel-frontend/public/uploads/blogs/thumb/survive-beerfest.jpg"
+        "image": [
+                  "http://images.mentalfloss.com/sites/default/files/styles/mf_image_3x2/public/beerfest.png?itok=y9cLMuKD&resize=1100x740"
         ]
     },
     {
         "name": "Trip to London",
         "id": 2,
-        "location" : "Burgas",
-        "created-by" : 2,
-        "participants": [2],
-        "images": [
+        "progress" : 76,
+        "created-by" : 1,
+        "image": [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIULiQ5LSnq_hzWnovENr2PnCaRzVpZYVTc4hW08m0UwucIOkMw"
         ]
     },
     {
         "name": "New phone",
         "id": 3,
-        "location" : "Bansko",
+        "progress" : 65,
         "created-by" : 1,
-        "participants": [1, 3, 4],
-        "images": [
-            "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
-            "http://i.telegraph.co.uk/multimedia/archive/02657/SkicrossBODY2_2657502a.jpg",
-            "https://usatthebiglead.files.wordpress.com/2016/11/gettyimages-512843548.jpg?w=1000&h=600&crop=1"
+        "image": [
+            "http://i.telegraph.co.uk/multimedia/archive/02657/SkicrossBODY2_2657502a.jpg"
         ]
     }
 ]
@@ -146,14 +140,14 @@ function onGoal(req, res) {
     }
 }
 
-function onAddEvent(req, res) {
+function onAddGoal(req, res) {
     if(req.headers["access-token"] == accessToken) {
         var query = url.parse(req.url, true).query;
 
         var event = {}
         event.id = events.length
         event.name = query.name
-        event.location = query.location
+        event.progress = query.progress
         event['created-by'] = 1
 
         events.push(event)

@@ -10,27 +10,24 @@ import Foundation
 class Goal: Codable {
     let name: String
     let id: Int
-    let location: String
+    let progress: Int
     let createdById: Int
-    let participantIds: [Int]
-    let imagePaths: [String]
+    let image: [String]
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case id = "id"
-        case location = "location"
+        case progress = "progress"
         case createdById = "created-by"
-        case participantIds = "participants"
-        case imagePaths = "images"
+        case image = "image"
     }
     
-    init(name: String, id: Int, location: String, createdBy: Int, participants: [Int], images: [String]) {
+    init(name: String, id: Int, progress: Int, createdBy: Int, image: [String]) {
         self.name = name
         self.id = id
-        self.location = location
+        self.progress = progress
         self.createdById = createdBy
-        self.participantIds = participants
-        self.imagePaths = images
+        self.image = image
     }
 }
 
@@ -39,7 +36,7 @@ class Goal: Codable {
 extension Goal {
     convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(Goal.self, from: data)
-        self.init(name: me.name, id: me.id, location: me.location, createdBy: me.createdById, participants: me.participantIds, images: me.imagePaths)
+        self.init(name: me.name, id: me.id, progress: me.progress, createdBy: me.createdById, image: me.image)
     }
     
     convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {

@@ -211,9 +211,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
                 
         if let t = mainUser {
-            let event = cachedGoals.first(where: {$0.id == t.eventsIds[indexPath.row]})
-            cell.textLabel?.text = event?.name
-            cell.detailTextLabel?.text = event?.location
+            let goal = cachedGoals.first(where: {$0.id == t.eventsIds[indexPath.row]})
+            cell.textLabel?.text = goal?.name
+            if let progress = goal?.progress {
+                cell.detailTextLabel?.text = String(progress)
+            }
         }
         
         return cell
@@ -231,7 +233,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let indexPath = tableView.indexPathForSelectedRow{
             let eventId = mainUser?.eventsIds[indexPath.row]
             if let eventVC = segue.destination as? GoalViewController {
-                eventVC.eventId = eventId
+                eventVC.goalID = eventId
             }
         }
     }

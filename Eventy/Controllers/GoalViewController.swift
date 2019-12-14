@@ -9,8 +9,8 @@ import UIKit
 
 class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var eventId: Int? = nil
-    var event: Goal?
+    var goalID: Int? = nil
+    var goal: Goal?
     
     var myTitle: String {
         get {
@@ -25,7 +25,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var imageTableView: UITableView! {
         didSet {
             imageTableView.delegate = self
@@ -36,15 +36,17 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let id = eventId {
-            event = cachedGoals.first(where: { $0.id == id })
+        if let id = goalID {
+            goal = cachedGoals.first(where: { $0.id == id })
         }
         
-        myTitle = event?.name ?? ""
+        myTitle = goal?.name ?? ""
         
-        locationLabel.text = event?.location
+        if let progress = goal?.progress {
+            progressLabel.text = String(progress)
+        }
         
-        mainImage.loadAsync(fromUrl: event?.imagePaths.first)
+        mainImage.loadAsync(fromUrl: goal?.image.first)
     }
     
     override func viewDidLoad() {
@@ -79,10 +81,10 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let userIds = event?.participantIds
+        let userIds = [1]
         if let userVC = segue.destination as? UsersTableViewController {
             userVC.userIds = userIds
-            if let createdByUserId = event?.createdById {
+            if let createdByUserId = goal?.createdById {
                 userVC.createdByUserId = createdByUserId
             }
         }
@@ -97,14 +99,14 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max((event?.imagePaths.count ?? 0) - 1, 0)
+        return max((goal?.image.count ?? 0) - 1, 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath)
                 
         if let cell = cell as? ImageTableViewCell {
-            cell.myImage.loadAsync(fromUrl: event?.imagePaths[indexPath.row + 1])
+            cell.myImage.loadAsync(fromUrl: goal?.image[indexPath.row + 1])
         }
         
         return cell
