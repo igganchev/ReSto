@@ -64,7 +64,6 @@ class GoalsTableViewController: UITableViewController {
                 }
                 do {
                     if let json = response.result.value {
-                        print(json)
                         let goal = try Goal(json)
                         
                         cachedGoals = cachedGoals.filter { $0.id != goal.id }
@@ -124,10 +123,9 @@ class GoalsTableViewController: UITableViewController {
         if let t = goals {
             let goal = cachedGoals.first(where: {$0.id == t.ids[indexPath.row]})
             cell.name.text = goal?.name
-            if let progress = goal?.progress {
-                cell.progress.text = "\(String(progress))%"
+            if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
+                cell.progress.text = "\(String(currentSum)) from \(String(goalSum))"
             }
-            cell.participants.text = "1 Participant"
             cell.goalImage.layer.borderWidth = 1
             cell.goalImage.layer.masksToBounds = false
             cell.goalImage.layer.borderColor = UIColor.black.cgColor

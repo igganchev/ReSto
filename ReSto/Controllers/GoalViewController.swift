@@ -42,8 +42,8 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         myTitle = goal?.name ?? ""
         
-        if let progress = goal?.progress {
-            progressLabel.text = String(progress)
+        if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
+            progressLabel.text = "\(String(currentSum)) from \(String(goalSum))"
         }
         
         mainImage.loadAsync(fromUrl: goal?.image.first)

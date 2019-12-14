@@ -15,7 +15,8 @@ var goals = [
     {
         "name": "New car",
         "id": 1,
-        "progress" : 18,
+        "goalSum" : 12500,
+        "currentSum" : 1300,
         "created-by" : 1,
         "image": [
                   "http://images.mentalfloss.com/sites/default/files/styles/mf_image_3x2/public/beerfest.png?itok=y9cLMuKD&resize=1100x740"
@@ -24,7 +25,8 @@ var goals = [
     {
         "name": "Trip to London",
         "id": 2,
-        "progress" : 76,
+        "goalSum" : 1100,
+        "currentSum" : 434,
         "created-by" : 1,
         "image": [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIULiQ5LSnq_hzWnovENr2PnCaRzVpZYVTc4hW08m0UwucIOkMw"
@@ -33,7 +35,8 @@ var goals = [
     {
         "name": "New phone",
         "id": 3,
-        "progress" : 65,
+        "goalSum" : 830,
+        "currentSum" : 779,
         "created-by" : 1,
         "image": [
             "http://i.telegraph.co.uk/multimedia/archive/02657/SkicrossBODY2_2657502a.jpg"
