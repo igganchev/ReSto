@@ -56,15 +56,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         self.nameLabel.text = self.mainUser!.name
                         
-                        
-                        let profilePicUrl = URL(string: self.mainUser!.profilePicPath)
-                        
-                        // load without blocking the UI
-                        DispatchQueue.global().async {
-                            let imageData: Data = try! Data(contentsOf: profilePicUrl!)
-                            DispatchQueue.main.async { [unowned self] in
-                                self.profileImage.image = UIImage(data: imageData)
-                            }
+                        if let profilePicString = self.mainUser?.profilePicPath {
+                            let placeholder = UIImage(named: "placeholder")
+                            self.profileImage.imageFromServerURL(profilePicString, placeHolder: placeholder)
                         }
                         
                         // add the used to the cache for later use
@@ -221,15 +215,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
         if let indexPath = tableView.indexPathForSelectedRow{
             let eventId = mainUser?.eventsIds[indexPath.row]
             if let eventVC = segue.destination as? GoalViewController {

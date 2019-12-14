@@ -126,7 +126,6 @@ class UsersTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let userId = userIds[indexPath.row]

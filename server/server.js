@@ -11,33 +11,6 @@ function uuidv4() {
 
 var accessToken = uuidv4();
 
-var users = [
-    {
-        "name": "Viki Dobreva",
-        "id": 1,
-        "events" : [1, 3],
-        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
-    },
-    {
-        "name": "Petar",
-        "id": 2,
-        "events" : [2],
-        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
-    },
-    {
-        "name": "Kalin",
-        "id": 3,
-        "events" : [3],
-        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
-    },
-    {
-        "name": "Asen",
-        "id": 4,
-        "events" : [3],
-        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
-    }
-]
-
 var goals = [
     {
         "name": "New car",
@@ -67,6 +40,21 @@ var goals = [
         ]
     }
 ]
+
+var goalIDs = [];
+for (i = 0; i < goals.length; i++) {
+  goalIDs.push(i+1);
+}
+
+var users = [
+    {
+        "name": "Ivan Ganchev",
+        "id": 1,
+        "events" : goalIDs,
+        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
+    }
+]
+
 
 console.log("Generated access token: " + accessToken)
 
