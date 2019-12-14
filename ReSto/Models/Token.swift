@@ -1,39 +1,30 @@
 //
-//  User.swift
+//  Token.swift
 //  Eventy
 //
-//  Created by Valentin Varbanov on 17.02.18.
+//  Created by Ivan Ganchev on 14.12.19.
 //
 
 import Foundation
 
-class User: Codable {
-    let name: String
-    let id: Int
-    let eventsIds: [Int]
-    let profilePicPath: String
+class Token: Codable {
+    let accessToken: String
     
     enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case id = "id"
-        case eventsIds = "events"
-        case profilePicPath = "profile-pic"
+        case accessToken = "access-token"
     }
     
-    init(name: String, id: Int, events: [Int], profilePic: String) {
-        self.name = name
-        self.id = id
-        self.eventsIds = events
-        self.profilePicPath = profilePic
+    init(accessToken: String) {
+        self.accessToken = accessToken
     }
 }
 
 // MARK: Convenience initializers
 
-extension User {
+extension Token {
     convenience init(data: Data) throws {
-        let me = try JSONDecoder().decode(User.self, from: data)
-        self.init(name: me.name, id: me.id, events: me.eventsIds, profilePic: me.profilePicPath)
+        let me = try JSONDecoder().decode(Token.self, from: data)
+        self.init(accessToken: me.accessToken)
     }
     
     convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {

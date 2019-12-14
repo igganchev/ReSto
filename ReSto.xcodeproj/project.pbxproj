@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1EE391F0A90F0F7AAC5621 /* Pods_ReSto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */; };
 		A7433EF920376BB800CAC15B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EF820376BB800CAC15B /* Token.swift */; };
 		A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFB203840E800CAC15B /* ProfileViewController.swift */; };
-		A7433EFE2038447200CAC15B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFD2038447200CAC15B /* User.swift */; };
-		A7433F0020384E5100CAC15B /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFF20384E5100CAC15B /* Goal.swift */; };
 		A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F012038500100CAC15B /* GoalsTableViewController.swift */; };
 		A7433F04203850A100CAC15B /* GoalsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F03203850A100CAC15B /* GoalsList.swift */; };
 		A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F05203862FF00CAC15B /* GoalViewController.swift */; };
@@ -21,32 +20,33 @@
 		A7DAF8B9200D3EF200801734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8B7200D3EF200801734 /* Main.storyboard */; };
 		A7DAF8BB200D3EF200801734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8BA200D3EF200801734 /* Assets.xcassets */; };
 		A7DAF8BE200D3EF200801734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8BC200D3EF200801734 /* LaunchScreen.storyboard */; };
-		B67F63056280F4F2B10BCDBA /* Pods_Eventy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A408D58C948FAF3309224263 /* Pods_Eventy.framework */; };
+		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
+		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
 		F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A90CA203F74FE00A7AAEA /* GoalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D75F9A0F88FBC6371D498E6 /* Pods-Eventy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventy.debug.xcconfig"; path = "Target Support Files/Pods-Eventy/Pods-Eventy.debug.xcconfig"; sourceTree = "<group>"; };
-		A408D58C948FAF3309224263 /* Pods_Eventy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eventy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE79CB0BE3DD67F711B6135 /* Pods-ReSto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.release.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.release.xcconfig"; sourceTree = "<group>"; };
+		80C02EE3AC49AA4572C12C8C /* Pods-ReSto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.debug.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.debug.xcconfig"; sourceTree = "<group>"; };
 		A7433EF820376BB800CAC15B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		A7433EFB203840E800CAC15B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A7433EFD2038447200CAC15B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Eventy/Models/User.swift; sourceTree = SOURCE_ROOT; };
-		A7433EFF20384E5100CAC15B /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = Eventy/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		A7433F012038500100CAC15B /* GoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		A7433F03203850A100CAC15B /* GoalsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsList.swift; sourceTree = "<group>"; };
 		A7433F05203862FF00CAC15B /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		A7433F092038B32D00CAC15B /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		A7433F0C2038B57600CAC15B /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
-		A7DAF8B0200D3EF200801734 /* Eventy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DAF8B0200D3EF200801734 /* ReSto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DAF8B3200D3EF200801734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7DAF8B5200D3EF200801734 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A7DAF8B8200D3EF200801734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7DAF8BA200D3EF200801734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7DAF8BD200D3EF200801734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7DAF8BF200D3EF200801734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
+		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		E55F94D1E699ADAE53B92F87 /* Pods-Eventy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventy.release.xcconfig"; path = "Target Support Files/Pods-Eventy/Pods-Eventy.release.xcconfig"; sourceTree = "<group>"; };
 		F62A90CA203F74FE00A7AAEA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,17 +55,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B67F63056280F4F2B10BCDBA /* Pods_Eventy.framework in Frameworks */,
+				0F1EE391F0A90F0F7AAC5621 /* Pods_ReSto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		417862550851A17598DF0803 /* Frameworks */ = {
+		20AF6F5513ADBA9725034F06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A408D58C948FAF3309224263 /* Pods_Eventy.framework */,
+				2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,8 +73,8 @@
 		5B2E781495F19D68CA04F0A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D75F9A0F88FBC6371D498E6 /* Pods-Eventy.debug.xcconfig */,
-				E55F94D1E699ADAE53B92F87 /* Pods-Eventy.release.xcconfig */,
+				80C02EE3AC49AA4572C12C8C /* Pods-ReSto.debug.xcconfig */,
+				2FE79CB0BE3DD67F711B6135 /* Pods-ReSto.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -91,17 +91,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A7433F0820389CF100CAC15B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A7433EFF20384E5100CAC15B /* Goal.swift */,
-				A7433EF820376BB800CAC15B /* Token.swift */,
-				A7433F03203850A100CAC15B /* GoalsList.swift */,
-				A7433EFD2038447200CAC15B /* User.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		A7433F0B2038B33100CAC15B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,22 +103,22 @@
 		A7DAF8A7200D3EF200801734 = {
 			isa = PBXGroup;
 			children = (
-				A7DAF8B2200D3EF200801734 /* Eventy */,
+				A7DAF8B2200D3EF200801734 /* ReSto */,
 				A7DAF8B1200D3EF200801734 /* Products */,
 				5B2E781495F19D68CA04F0A7 /* Pods */,
-				417862550851A17598DF0803 /* Frameworks */,
+				20AF6F5513ADBA9725034F06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A7DAF8B1200D3EF200801734 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7DAF8B0200D3EF200801734 /* Eventy.app */,
+				A7DAF8B0200D3EF200801734 /* ReSto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A7DAF8B2200D3EF200801734 /* Eventy */ = {
+		A7DAF8B2200D3EF200801734 /* ReSto */ = {
 			isa = PBXGroup;
 			children = (
 				A7DAF8BF200D3EF200801734 /* Info.plist */,
@@ -137,12 +126,23 @@
 				A7DAF8BA200D3EF200801734 /* Assets.xcassets */,
 				A7DAF8BC200D3EF200801734 /* LaunchScreen.storyboard */,
 				A7DAF8B7200D3EF200801734 /* Main.storyboard */,
+				CC29B36A23A59B8000245044 /* Models */,
 				CC3E8FFF23A58B1200D6A31D /* Extensions */,
 				A7433F0720389CAC00CAC15B /* Controllers */,
-				A7433F0820389CF100CAC15B /* Models */,
 				A7433F0B2038B33100CAC15B /* Views */,
 			);
-			path = Eventy;
+			path = ReSto;
+			sourceTree = "<group>";
+		};
+		CC29B36A23A59B8000245044 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC29B36B23A59BAB00245044 /* Goal.swift */,
+				CC29B36C23A59BAB00245044 /* User.swift */,
+				A7433EF820376BB800CAC15B /* Token.swift */,
+				A7433F03203850A100CAC15B /* GoalsList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CC3E8FFF23A58B1200D6A31D /* Extensions */ = {
@@ -156,23 +156,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7DAF8AF200D3EF200801734 /* Eventy */ = {
+		A7DAF8AF200D3EF200801734 /* ReSto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7DAF8D8200D3EF200801734 /* Build configuration list for PBXNativeTarget "Eventy" */;
+			buildConfigurationList = A7DAF8D8200D3EF200801734 /* Build configuration list for PBXNativeTarget "ReSto" */;
 			buildPhases = (
-				650EB2B8B43A9B8115B2C79D /* [CP] Check Pods Manifest.lock */,
+				FD4A20CFADED00AB58923E19 /* [CP] Check Pods Manifest.lock */,
 				A7DAF8AC200D3EF200801734 /* Sources */,
 				A7DAF8AD200D3EF200801734 /* Frameworks */,
 				A7DAF8AE200D3EF200801734 /* Resources */,
-				6E8BF7ADC30B5A404ACD2BFA /* [CP] Embed Pods Frameworks */,
+				812ABE432F163FD9582A4289 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Eventy;
+			name = ReSto;
 			productName = Eventy;
-			productReference = A7DAF8B0200D3EF200801734 /* Eventy.app */;
+			productReference = A7DAF8B0200D3EF200801734 /* ReSto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7DAF8AB200D3EF200801734 /* Build configuration list for PBXProject "Eventy" */;
+			buildConfigurationList = A7DAF8AB200D3EF200801734 /* Build configuration list for PBXProject "ReSto" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7DAF8AF200D3EF200801734 /* Eventy */,
+				A7DAF8AF200D3EF200801734 /* ReSto */,
 			);
 		};
 /* End PBXProject section */
@@ -223,7 +223,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		650EB2B8B43A9B8115B2C79D /* [CP] Check Pods Manifest.lock */ = {
+		812ABE432F163FD9582A4289 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReSto/Pods-ReSto-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReSto/Pods-ReSto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4A20CFADED00AB58923E19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,29 +256,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Eventy-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReSto-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E8BF7ADC30B5A404ACD2BFA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Eventy/Pods-Eventy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eventy/Pods-Eventy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -270,17 +270,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC29B36E23A59BAB00245044 /* User.swift in Sources */,
 				A7433EF920376BB800CAC15B /* Token.swift in Sources */,
 				A7433F04203850A100CAC15B /* GoalsList.swift in Sources */,
 				CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */,
 				A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */,
+				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
 				A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */,
-				A7433EFE2038447200CAC15B /* User.swift in Sources */,
 				A7433F0D2038B57600CAC15B /* UsersTableViewController.swift in Sources */,
 				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
 				A7433F0A2038B32D00CAC15B /* ImageTableViewCell.swift in Sources */,
-				A7433F0020384E5100CAC15B /* Goal.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,
 				F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */,
 			);
@@ -421,13 +421,13 @@
 		};
 		A7DAF8D9200D3EF200801734 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D75F9A0F88FBC6371D498E6 /* Pods-Eventy.debug.xcconfig */;
+			baseConfigurationReference = 80C02EE3AC49AA4572C12C8C /* Pods-ReSto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UN68AZ46YU;
-				INFOPLIST_FILE = Eventy/Info.plist;
+				INFOPLIST_FILE = ReSto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -443,13 +443,13 @@
 		};
 		A7DAF8DA200D3EF200801734 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E55F94D1E699ADAE53B92F87 /* Pods-Eventy.release.xcconfig */;
+			baseConfigurationReference = 2FE79CB0BE3DD67F711B6135 /* Pods-ReSto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UN68AZ46YU;
-				INFOPLIST_FILE = Eventy/Info.plist;
+				INFOPLIST_FILE = ReSto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -466,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7DAF8AB200D3EF200801734 /* Build configuration list for PBXProject "Eventy" */ = {
+		A7DAF8AB200D3EF200801734 /* Build configuration list for PBXProject "ReSto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7DAF8D6200D3EF200801734 /* Debug */,
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7DAF8D8200D3EF200801734 /* Build configuration list for PBXNativeTarget "Eventy" */ = {
+		A7DAF8D8200D3EF200801734 /* Build configuration list for PBXNativeTarget "ReSto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7DAF8D9200D3EF200801734 /* Debug */,

@@ -2,7 +2,7 @@
 //  EventViewController.swift
 //  Eventy
 //
-//  Created by Valentin Varbanov on 17.02.18.
+//  Created by Ivan Ganchev on 14.12.19.
 //
 
 import UIKit

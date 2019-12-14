@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Eventy.xcodeproj">
+      location = "group:/Users/ivanganchev/Documents/Xcode/Swift/ReSto/ReSto.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ReSto.xcodeproj">
    </FileRef>
 </Workspace>

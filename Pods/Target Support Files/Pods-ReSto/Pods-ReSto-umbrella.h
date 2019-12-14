@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_EventyVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_EventyVersionString[];
+FOUNDATION_EXPORT double Pods_ReStoVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ReStoVersionString[];
 

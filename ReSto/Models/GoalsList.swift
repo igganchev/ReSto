@@ -1,30 +1,31 @@
 //
-//  Token.swift
+//  TrendingResult.swift
 //  Eventy
 //
-//  Created by Valentin Varbanov on 16.02.18.
+//  Created by Ivan Ganchev on 14.12.19.
 //
+
 
 import Foundation
 
-class Token: Codable {
-    let accessToken: String
+class GoalsList: Codable {
+    let ids: [Int]
     
     enum CodingKeys: String, CodingKey {
-        case accessToken = "access-token"
+        case ids = "ids"
     }
     
-    init(accessToken: String) {
-        self.accessToken = accessToken
+    init(ids: [Int]) {
+        self.ids = ids
     }
 }
 
 // MARK: Convenience initializers
 
-extension Token {
+extension GoalsList {
     convenience init(data: Data) throws {
-        let me = try JSONDecoder().decode(Token.self, from: data)
-        self.init(accessToken: me.accessToken)
+        let me = try JSONDecoder().decode(GoalsList.self, from: data)
+        self.init(ids: me.ids)
     }
     
     convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -46,4 +47,3 @@ extension Token {
         return String(data: try self.jsonData(), encoding: encoding)
     }
 }
-
