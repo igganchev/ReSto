@@ -6,17 +6,6 @@ target 'Eventy' do
   use_frameworks!
 
   # Pods for Eventy
-  pod 'SwiftyBeaver'
-  pod 'Alamofire', '~> 4.5'
-
-  target 'EventyTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'EventyUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'Alamofire'
 
 end
