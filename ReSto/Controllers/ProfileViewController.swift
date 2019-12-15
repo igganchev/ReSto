@@ -207,8 +207,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let t = mainUser {
             let goal = cachedGoals.first(where: {$0.id == t.eventsIds[indexPath.row]})
             cell.textLabel?.text = goal?.name
-            if let progress = goal?.progress {
-                cell.detailTextLabel?.text = String(progress)
+           
+            if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
+                cell.detailTextLabel?.text = "\(String(currentSum)) from \(String(goalSum))"
             }
         }
         
