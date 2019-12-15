@@ -13,5 +13,6 @@ class GoalCell: UITableViewCell {
     @IBOutlet weak var progress: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var goalImage: UIImageView!
-    @IBOutlet weak var sum: UILabel!
+    @IBOutlet weak var percentage: UILabel!
+    
 }

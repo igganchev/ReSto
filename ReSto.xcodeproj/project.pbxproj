@@ -28,6 +28,7 @@
 		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
+		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
 		F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A90CA203F74FE00A7AAEA /* GoalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
 		F62A90CA203F74FE00A7AAEA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */,
+				CCE4EF1B23A625900078045C /* MyUIProgressView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				A7433F04203850A100CAC15B /* GoalsList.swift in Sources */,
 				CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */,
 				A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */,
+				CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */,
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
 				A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */,
 				A7433F0D2038B57600CAC15B /* UsersTableViewController.swift in Sources */,

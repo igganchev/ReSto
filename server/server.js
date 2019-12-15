@@ -18,7 +18,7 @@ var goals = [
         "currentSum" : 1300,
         "created-by" : 1,
         "image": [
-                  "http://images.mentalfloss.com/sites/default/files/styles/mf_image_3x2/public/beerfest.png?itok=y9cLMuKD&resize=1100x740"
+                  "https://cdn.motor1.com/images/mgl/Je7nQ/s1/2020-alfa-romeo-stelvio.jpg"
         ]
     },
     {
@@ -28,7 +28,7 @@ var goals = [
         "currentSum" : 434,
         "created-by" : 1,
         "image": [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIULiQ5LSnq_hzWnovENr2PnCaRzVpZYVTc4hW08m0UwucIOkMw"
+            "https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"
         ]
     },
     {
@@ -38,7 +38,7 @@ var goals = [
         "currentSum" : 779,
         "created-by" : 1,
         "image": [
-            "http://i.telegraph.co.uk/multimedia/archive/02657/SkicrossBODY2_2657502a.jpg"
+            "https://gloimg.gbtcdn.com/soa/gb/pdm-product-pic/Electronic/2019/11/08/goods_img_big-v23/20191108175625_65552.jpg"
         ]
     }
 ]

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -271,50 +271,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="110" id="G7b-Se-RFN" customClass="GoalCell" customModule="ReSto" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" rowHeight="110" id="G7b-Se-RFN" customClass="GoalCell" customModule="ReSto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G7b-Se-RFN" id="w4m-Wb-Qqw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-7J-T0b">
-                                            <rect key="frame" x="75" y="11" width="199" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-7J-T0b">
+                                            <rect key="frame" x="75" y="11" width="61.5" height="27.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-Ge-5pg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-Ge-5pg">
                                             <rect key="frame" x="7" y="24" width="60" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="QjQ-iP-Tib"/>
+                                            </constraints>
                                         </imageView>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="doL-rn-nU1">
-                                            <rect key="frame" x="207" y="82" width="157" height="2"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="doL-rn-nU1" customClass="MyUIProgressView" customModule="ReSto" customModuleProvider="target">
+                                            <rect key="frame" x="75" y="87" width="319" height="9"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="6ZU-be-KZD"/>
+                                            </constraints>
+                                            <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </progressView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCq-Or-fzv">
-                                            <rect key="frame" x="75" y="45" width="78" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCq-Or-fzv">
+                                            <rect key="frame" x="75" y="58" width="71" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qz9-h2-8uF">
-                                            <rect key="frame" x="207" y="45" width="157" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXn-H8-eyz">
+                                            <rect key="frame" x="357" y="58" width="37" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="doL-rn-nU1" secondAttribute="trailing" constant="20" id="10z-rM-qHZ"/>
+                                        <constraint firstItem="doL-rn-nU1" firstAttribute="leading" secondItem="DXJ-Ge-5pg" secondAttribute="trailing" constant="8" id="2QE-9U-M4f"/>
+                                        <constraint firstItem="doL-rn-nU1" firstAttribute="top" secondItem="RCq-Or-fzv" secondAttribute="bottom" constant="8" id="NUk-Q5-NDb"/>
+                                        <constraint firstItem="RCq-Or-fzv" firstAttribute="leading" secondItem="DXJ-Ge-5pg" secondAttribute="trailing" constant="8" id="W8Q-Bc-aIe"/>
+                                        <constraint firstItem="DXJ-Ge-5pg" firstAttribute="top" secondItem="w4m-Wb-Qqw" secondAttribute="top" constant="24" id="WCM-pi-nnI"/>
+                                        <constraint firstAttribute="bottom" secondItem="DXJ-Ge-5pg" secondAttribute="bottom" constant="26" id="aha-7P-aDd"/>
+                                        <constraint firstItem="DXJ-Ge-5pg" firstAttribute="leading" secondItem="w4m-Wb-Qqw" secondAttribute="leading" constant="7" id="axd-Tn-pva"/>
+                                        <constraint firstItem="hdm-7J-T0b" firstAttribute="top" secondItem="w4m-Wb-Qqw" secondAttribute="top" constant="11" id="b0g-4y-kzB"/>
+                                        <constraint firstAttribute="bottom" secondItem="doL-rn-nU1" secondAttribute="bottom" constant="15" id="gwf-ns-oBP"/>
+                                        <constraint firstAttribute="trailing" secondItem="CXn-H8-eyz" secondAttribute="trailing" constant="20" id="trv-kM-nef"/>
+                                        <constraint firstItem="hdm-7J-T0b" firstAttribute="leading" secondItem="DXJ-Ge-5pg" secondAttribute="trailing" constant="8" id="umG-16-W34"/>
+                                        <constraint firstItem="doL-rn-nU1" firstAttribute="top" secondItem="CXn-H8-eyz" secondAttribute="bottom" constant="7" id="wmC-iI-1Qn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="goalImage" destination="DXJ-Ge-5pg" id="ajV-DO-wNj"/>
                                     <outlet property="name" destination="hdm-7J-T0b" id="ZdV-9x-hmr"/>
+                                    <outlet property="percentage" destination="CXn-H8-eyz" id="4oj-tb-UX5"/>
                                     <outlet property="progress" destination="RCq-Or-fzv" id="xQY-gQ-lho"/>
                                     <outlet property="progressView" destination="doL-rn-nU1" id="hw3-8w-DBo"/>
-                                    <outlet property="sum" destination="Qz9-h2-8uF" id="tvr-FV-N1X"/>
                                     <segue destination="k8F-WD-est" kind="show" id="RC3-Eb-KzJ"/>
                                 </connections>
                             </tableViewCell>

@@ -118,22 +118,19 @@ class GoalsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! GoalCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalCell
         
         if let t = goals {
             let goal = cachedGoals.first(where: {$0.id == t.ids[indexPath.row]})
             cell.name.text = goal?.name
-            if let goalSum = goal?.goalSum {
-                if let currentSum = goal?.currentSum {
-                    cell.progress.text = "\(String(currentSum / goalSum))%"
-                    cell.progressView.progress = Float(currentSum) / Float(goalSum)
-                    cell.sum.text = "\(String(currentSum))$ of \(String(goalSum))$"
-                }
-            }
             
             if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
-                cell.progress.text = "\(String(currentSum)) from \(String(goalSum))"
+                let percentage = Float(currentSum) / Float(goalSum)
+                cell.progressView.progress = percentage
+                cell.progress.text = "$\(String(currentSum)) of $\(String(goalSum))"
+                cell.percentage.text = "\(Int(percentage*100))%"
             }
+            
             cell.goalImage.layer.borderWidth = 1
             cell.goalImage.layer.masksToBounds = false
             cell.goalImage.layer.borderColor = UIColor.black.cgColor
@@ -154,7 +151,6 @@ class GoalsTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let goalID = goals?.ids[indexPath.row]
