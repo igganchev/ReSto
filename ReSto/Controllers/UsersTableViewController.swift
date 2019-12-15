@@ -12,10 +12,6 @@ class UsersTableViewController: UITableViewController {
     
     var userIds: [Int]! = nil
     var createdByUserId: Int = -1
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

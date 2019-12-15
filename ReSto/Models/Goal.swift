@@ -1,5 +1,5 @@
 //
-//  Event.swift
+//  Goal.swift
 //  ReSto
 //
 //  Created by Ivan Ganchev on 14.12.19.

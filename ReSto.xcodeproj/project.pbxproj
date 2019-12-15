@@ -18,7 +18,6 @@
 		A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F012038500100CAC15B /* GoalsTableViewController.swift */; };
 		A7433F04203850A100CAC15B /* GoalsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F03203850A100CAC15B /* GoalsList.swift */; };
 		A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F05203862FF00CAC15B /* GoalViewController.swift */; };
-		A7433F0A2038B32D00CAC15B /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F092038B32D00CAC15B /* ImageTableViewCell.swift */; };
 		A7433F0D2038B57600CAC15B /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F0C2038B57600CAC15B /* UsersTableViewController.swift */; };
 		A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAF8B3200D3EF200801734 /* AppDelegate.swift */; };
 		A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAF8B5200D3EF200801734 /* LoginController.swift */; };
@@ -48,7 +47,6 @@
 		A7433F012038500100CAC15B /* GoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		A7433F03203850A100CAC15B /* GoalsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsList.swift; sourceTree = "<group>"; };
 		A7433F05203862FF00CAC15B /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
-		A7433F092038B32D00CAC15B /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		A7433F0C2038B57600CAC15B /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		A7DAF8B0200D3EF200801734 /* ReSto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DAF8B3200D3EF200801734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		A7433F0B2038B33100CAC15B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A7433F092038B32D00CAC15B /* ImageTableViewCell.swift */,
 				F62A90CA203F74FE00A7AAEA /* GoalCell.swift */,
 				59A82A0523A5AEAE001312C0 /* TransactionCell.swift */,
 			);
@@ -319,7 +316,6 @@
 				59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */,
 				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
-				A7433F0A2038B32D00CAC15B /* ImageTableViewCell.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,
 				59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */,
 				F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */,

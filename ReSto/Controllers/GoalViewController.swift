@@ -1,5 +1,5 @@
 //
-//  EventViewController.swift
+//  GoalViewController.swift
 //  ReSto
 //
 //  Created by Ivan Ganchev on 14.12.19.

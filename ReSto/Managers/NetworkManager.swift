@@ -36,7 +36,7 @@ class NetworkManager {
         Alamofire.request(
             URL(string: serverIp + "/\(descriptor)")!,
             method: .get,
-            parameters: ["\(descriptor)id": "\(id)"],
+            parameters: ["\(descriptor)id": id],
             headers: ["access-token": t])
             .validate()
             .responseString { (response) in
@@ -51,4 +51,21 @@ class NetworkManager {
         }
     }
     
+    static func authenticate(user: String, pass: String, completion: @escaping (_ json: String) -> Void) {        
+        Alamofire.request(
+            URL(string: serverIp + "/login")!,
+            method: .get,
+            parameters: ["user": user, "pass": pass])
+            .validate()
+            .responseString { (response) in
+                guard response.result.isSuccess else {
+                    print("Error response: \(String(describing: response.result.error))")
+                    return
+                }
+                
+                if let json = response.result.value {
+                        completion(json)
+                }
+        }
+    }
 }

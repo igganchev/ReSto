@@ -11,10 +11,6 @@ import Alamofire
 class GoalsTableViewController: UITableViewController {
     
     var goals: GoalsList?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         loadGoals { [unowned self] in
