@@ -52,7 +52,10 @@ var users = [
     {
         "name": "Ivan Ganchev",
         "id": 1,
-        "events" : goalIDs,
+        "frequency": 1,
+        "roundingUp": 2,
+        "savedTotal": 472.08,
+        "numberOfTransactions": 78,
         "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
     }
 ]

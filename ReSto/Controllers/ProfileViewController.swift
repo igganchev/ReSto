@@ -17,9 +17,7 @@ class ProfileViewController: UIViewController  {
     var userId: Int?
     
     override func viewWillAppear(_ animated: Bool) {
-        loadProfile { [unowned self] in
-            self.reloadData()
-        }
+        loadProfile {}
         
         profileImage.layer.borderWidth = 0.5
         profileImage.layer.masksToBounds = false
@@ -29,19 +27,17 @@ class ProfileViewController: UIViewController  {
     }
     
     func loadProfile(completion: @escaping () -> Void) {
-        print("here")
-        
         NetworkManager.getAll(descriptor: "userinfo") { [unowned self] json in
             do {
                 self.mainUser = try User(json)
-            
-                self.nameLabel.text = self.mainUser!.name
 
+                self.nameLabel.text = self.mainUser?.name
+                
                 if let profilePicString = self.mainUser?.profilePicPath {
                     let placeholder = UIImage(named: "placeholder")
                     self.profileImage.imageFromServerURL(profilePicString, placeHolder: placeholder)
                 }
-
+                
                 if let user = self.mainUser {
                     cachedUsers = cachedUsers.filter { $0.id != user.id }
                     cachedUsers.append(user)
@@ -51,15 +47,6 @@ class ProfileViewController: UIViewController  {
                 print("Could not parse response")
             }
             completion()
-        }
-    }
-    
-    func reloadData() {
-        if let events = self.mainUser?.eventsIds {
-            for id in events {
-                if cachedGoals.firstIndex(where: { $0.id == id }) != nil {
-                } else {}
-            }
         }
     }
 }
