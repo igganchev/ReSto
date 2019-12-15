@@ -126,8 +126,10 @@ class GoalsTableViewController: UITableViewController {
             cell.name.text = goal?.name
             if let progress = goal?.progress {
                 cell.progress.text = "\(String(progress))%"
+                cell.progressView.progress = Float(progress) / 100
+                cell.sum.text = "\(String(progress))$ of \(String(100))$"
             }
-            cell.participants.text = "1 Participant"
+            
             cell.goalImage.layer.borderWidth = 1
             cell.goalImage.layer.masksToBounds = false
             cell.goalImage.layer.borderColor = UIColor.black.cgColor

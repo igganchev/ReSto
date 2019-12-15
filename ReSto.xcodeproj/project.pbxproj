@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0F1EE391F0A90F0F7AAC5621 /* Pods_ReSto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */; };
+		59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */; };
+		59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0523A5AEAE001312C0 /* TransactionCell.swift */; };
+		59A82A0823A5B285001312C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0723A5B285001312C0 /* Transaction.swift */; };
+		59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0923A5B341001312C0 /* TransactionList.swift */; };
+		59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */; };
 		A7433EF920376BB800CAC15B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EF820376BB800CAC15B /* Token.swift */; };
 		A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFB203840E800CAC15B /* ProfileViewController.swift */; };
 		A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F012038500100CAC15B /* GoalsTableViewController.swift */; };
@@ -29,6 +34,11 @@
 /* Begin PBXFileReference section */
 		2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE79CB0BE3DD67F711B6135 /* Pods-ReSto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.release.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.release.xcconfig"; sourceTree = "<group>"; };
+		59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
+		59A82A0523A5AEAE001312C0 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		59A82A0723A5B285001312C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		59A82A0923A5B341001312C0 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		80C02EE3AC49AA4572C12C8C /* Pods-ReSto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.debug.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.debug.xcconfig"; sourceTree = "<group>"; };
 		A7433EF820376BB800CAC15B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		A7433EFB203840E800CAC15B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +97,8 @@
 				A7DAF8B5200D3EF200801734 /* LoginController.swift */,
 				A7433EFB203840E800CAC15B /* ProfileViewController.swift */,
 				A7433F012038500100CAC15B /* GoalsTableViewController.swift */,
+				59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */,
+				59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,6 +108,7 @@
 			children = (
 				A7433F092038B32D00CAC15B /* ImageTableViewCell.swift */,
 				F62A90CA203F74FE00A7AAEA /* GoalCell.swift */,
+				59A82A0523A5AEAE001312C0 /* TransactionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +154,8 @@
 				CC29B36C23A59BAB00245044 /* User.swift */,
 				A7433EF820376BB800CAC15B /* Token.swift */,
 				A7433F03203850A100CAC15B /* GoalsList.swift */,
+				59A82A0723A5B285001312C0 /* Transaction.swift */,
+				59A82A0923A5B341001312C0 /* TransactionList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,16 +287,21 @@
 			files = (
 				CC29B36E23A59BAB00245044 /* User.swift in Sources */,
 				A7433EF920376BB800CAC15B /* Token.swift in Sources */,
+				59A82A0823A5B285001312C0 /* Transaction.swift in Sources */,
 				A7433F04203850A100CAC15B /* GoalsList.swift in Sources */,
 				CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */,
 				A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */,
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
 				A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */,
 				A7433F0D2038B57600CAC15B /* UsersTableViewController.swift in Sources */,
+				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
+				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
+				59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */,
 				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
 				A7433F0A2038B32D00CAC15B /* ImageTableViewCell.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,
+				59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */,
 				F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
