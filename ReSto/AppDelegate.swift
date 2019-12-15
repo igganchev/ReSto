@@ -14,7 +14,7 @@ let serverIp = "http://localhost:8080"
 
 var cachedGoals = [Goal]()
 var cachedUsers = [User]()
-var cachedTransaction = [Transaction]()
+var cachedTransactions = [Transaction]()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

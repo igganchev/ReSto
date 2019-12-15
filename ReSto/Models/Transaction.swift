@@ -11,7 +11,7 @@ class Transaction: Codable, JSONGeneratable {
     
     let name: String
     let id: Int
-    let date: Date
+    let date: String
     let sum: Double
     let card: String
     let location: String
@@ -25,7 +25,7 @@ class Transaction: Codable, JSONGeneratable {
         case location = "location"
     }
     
-    init(name: String, id: Int, date: Date, sum: Double, card: String, location:String) {
+    init(name: String, id: Int, date: String, sum: Double, card: String, location:String) {
         self.name = name
         self.id = id
         self.date = date
@@ -35,7 +35,11 @@ class Transaction: Codable, JSONGeneratable {
     }
     
     required convenience init(data: Data) throws {
-           let me = try JSONDecoder().decode(Transaction.self, from: data)
-           self.init(name: me.name, id: me.id, date: me.date, sum: me.sum, card: me.card, location: me.location)
+        let arr = try JSONDecoder().decode(Array<Transaction>.self, from: data)
+        if let me = arr.first {
+            self.init(name: me.name, id: me.id, date: me.date, sum: me.sum, card: me.card, location: me.location)
+        } else {
+            self.init(name: "", id: 0, date: "", sum: 0, card: "", location: "")
+        }
     }
 }
