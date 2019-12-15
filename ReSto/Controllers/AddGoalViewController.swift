@@ -7,8 +7,11 @@
 
 import UIKit
 
-class AddGoalViewController: UIViewController {
+class AddGoalViewController: UIViewController, UITextFieldDelegate {
 
+    var name: String?
+    var sum: String?
+    
     @IBAction func createGoal(_ sender: Any) {
         
     }
