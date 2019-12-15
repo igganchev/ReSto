@@ -30,6 +30,7 @@
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
 		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
 		CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1E23A62D960078045C /* NetworkManager.swift */; };
+		CCE4EF2123A63A010078045C /* JSONGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF2023A63A010078045C /* JSONGeneratable.swift */; };
 		F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A90CA203F74FE00A7AAEA /* GoalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
 		CCE4EF1E23A62D960078045C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CCE4EF2023A63A010078045C /* JSONGeneratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGeneratable.swift; sourceTree = "<group>"; };
 		F62A90CA203F74FE00A7AAEA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 				A7433F03203850A100CAC15B /* GoalsList.swift */,
 				59A82A0723A5B285001312C0 /* Transaction.swift */,
 				59A82A0923A5B341001312C0 /* TransactionList.swift */,
+				CCE4EF2023A63A010078045C /* JSONGeneratable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE4EF2123A63A010078045C /* JSONGeneratable.swift in Sources */,
 				CC29B36E23A59BAB00245044 /* User.swift in Sources */,
 				A7433EF920376BB800CAC15B /* Token.swift in Sources */,
 				59A82A0823A5B285001312C0 /* Transaction.swift in Sources */,

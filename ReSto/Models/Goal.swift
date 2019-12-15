@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Goal: Codable {
+class Goal: Codable, JSONGeneratable {
     let name: String
     let id: Int
     let goalSum: Int
@@ -32,32 +32,9 @@ class Goal: Codable {
         self.createdById = createdBy
         self.image = image
     }
-}
-
-// MARK: Convenience initializers
-
-extension Goal {
-    convenience init(data: Data) throws {
+    
+    required convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(Goal.self, from: data)
         self.init(name: me.name, id: me.id, goalSum: me.goalSum, currentSum: me.currentSum, createdBy: me.createdById, image: me.image)
-    }
-    
-    convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-        guard let data = json.data(using: encoding) else {
-            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-        }
-        try self.init(data: data)
-    }
-    
-    convenience init(fromURL url: URL) throws {
-        try self.init(data: try Data(contentsOf: url))
-    }
-    
-    func jsonData() throws -> Data {
-        return try JSONEncoder().encode(self)
-    }
-    
-    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
-        return String(data: try self.jsonData(), encoding: encoding)
     }
 }

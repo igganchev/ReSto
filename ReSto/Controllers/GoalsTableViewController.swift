@@ -81,9 +81,7 @@ class GoalsTableViewController: UITableViewController {
     var lastItemsInSection = 0
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         lastItemsInSection = goals?.ids.count ?? 0
-        
         return lastItemsInSection
     }
 
@@ -101,9 +99,9 @@ class GoalsTableViewController: UITableViewController {
                 cell.percentage.text = "\(Int(percentage*100))%"
             }
             
-            cell.goalImage.layer.borderWidth = 1
+            cell.goalImage.layer.borderWidth = 0.5
             cell.goalImage.layer.masksToBounds = false
-            cell.goalImage.layer.borderColor = UIColor.black.cgColor
+            cell.goalImage.layer.borderColor = UIColor.gray.cgColor
             cell.goalImage.layer.cornerRadius = cell.goalImage.frame.height/2
             cell.goalImage.clipsToBounds = true
             if let imagePath = goal?.image[0] {
