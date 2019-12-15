@@ -23,56 +23,27 @@ class GoalsTableViewController: UITableViewController {
     }
     
     func loadGoals(completion: @escaping () -> Void) {
-        guard let t = token?.accessToken else { return }
-        
-        Alamofire.request(
-            URL(string: serverIp + "/goals")!,
-            method: .get,
-            headers: ["access-token": t])
-            .validate()
-            .responseString { (response) in
-                guard response.result.isSuccess else {
-                    print("Error response: \(String(describing: response.result.error))")
-                    completion()
-                    return
-                }
-                do {
-                    if let json = response.result.value {
-                        self.goals = try GoalsList(json)
-                    }
-                } catch {
-                    print("Could not parse response")
-                }
-                completion()
+        NetworkManager.getAll(descriptor: "goals") { [unowned self] json in
+            do {
+                self.goals = try GoalsList(json)
+            } catch {
+                print("Could not parse response")
+            }
+            completion()
         }
-        
     }
     
     func loadGoal(id: Int, completion: @escaping () -> Void) {
-        guard let t = token?.accessToken else { return }
-        Alamofire.request(
-            URL(string: serverIp + "/goal")!,
-            method: .get,
-            parameters: ["goalid": "\(id)"],
-            headers: ["access-token": t])
-            .validate()
-            .responseString { (response) in
-                guard response.result.isSuccess else {
-                    print("Error response: \(String(describing: response.result.error))")
-                    completion()
-                    return
-                }
-                do {
-                    if let json = response.result.value {
-                        let goal = try Goal(json)
-                        
-                        cachedGoals = cachedGoals.filter { $0.id != goal.id }
-                        cachedGoals.append(goal)
-                    }
-                } catch {
-                    print(error)
-                }
-                completion()
+        NetworkManager.getByID(descriptor: "goal", byID: id) { json in
+            do {
+                let goal = try Goal(json)
+                
+                cachedGoals = cachedGoals.filter { $0.id != goal.id }
+                cachedGoals.append(goal)
+            } catch {
+                print("Could not parse response")
+            }
+            completion()
         }
     }
     
@@ -103,7 +74,6 @@ class GoalsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

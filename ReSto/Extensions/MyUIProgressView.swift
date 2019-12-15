@@ -1,5 +1,5 @@
 //
-//  UIProgressView+Extension.swift
+//  MyUIProgressView.swift
 //  ReSto
 //
 //  Created by Ivan Ganchev on 15.12.19.

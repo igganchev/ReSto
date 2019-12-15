@@ -29,6 +29,7 @@
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
 		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
+		CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1E23A62D960078045C /* NetworkManager.swift */; };
 		F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A90CA203F74FE00A7AAEA /* GoalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
+		CCE4EF1E23A62D960078045C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F62A90CA203F74FE00A7AAEA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				A7DAF8BA200D3EF200801734 /* Assets.xcassets */,
 				A7DAF8BC200D3EF200801734 /* LaunchScreen.storyboard */,
 				A7DAF8B7200D3EF200801734 /* Main.storyboard */,
+				CCE4EF1D23A62D7F0078045C /* Managers */,
 				CC29B36A23A59B8000245044 /* Models */,
 				CC3E8FFF23A58B1200D6A31D /* Extensions */,
 				A7433F0720389CAC00CAC15B /* Controllers */,
@@ -169,6 +172,14 @@
 				CCE4EF1B23A625900078045C /* MyUIProgressView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCE4EF1D23A62D7F0078045C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CCE4EF1E23A62D960078045C /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				A7433F0D2038B57600CAC15B /* UsersTableViewController.swift in Sources */,
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
+				CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */,
 				59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */,
 				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
