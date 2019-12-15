@@ -1,6 +1,6 @@
 //
 //  ProfileViewController.swift
-//  Eventy
+//  ReSto
 //
 //  Created by Ivan Ganchev on 14.12.19.
 //

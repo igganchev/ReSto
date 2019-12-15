@@ -1,6 +1,6 @@
 //
 //  TrendingEventCell.swift
-//  Eventy
+//  ReSto
 //
 //  Created by Ivan Ganchev on 23/02/2018.
 //
