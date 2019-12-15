@@ -123,6 +123,14 @@ class GoalsTableViewController: UITableViewController {
         if let t = goals {
             let goal = cachedGoals.first(where: {$0.id == t.ids[indexPath.row]})
             cell.name.text = goal?.name
+            if let goalSum = goal?.goalSum {
+                if let currentSum = goal?.currentSum {
+                    cell.progress.text = "\(String(currentSum / goalSum))%"
+                    cell.progressView.progress = Float(currentSum) / Float(goalSum)
+                    cell.sum.text = "\(String(currentSum))$ of \(String(goalSum))$"
+                }
+            }
+            
             if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
                 cell.progress.text = "\(String(currentSum)) from \(String(goalSum))"
             }
