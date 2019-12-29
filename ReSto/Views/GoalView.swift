@@ -13,6 +13,7 @@ struct GoalView: View {
     var currentSum: Int?
     var goalSum: Int?
     var percentage: Float?
+    var image: UIImage?
 
     init(goal: Goal?) {
         self.goal = goal
@@ -26,16 +27,10 @@ struct GoalView: View {
             self.goalSum = goalSum
             self.percentage = Float(currentSum) / Float(goalSum)
         }
-    }
-    
-    private func getImage() -> UIImage? {
-        let placeholder = UIImage(named: "placeholder")
-        let imageView = UIImageView(image: placeholder)
-        if let URLString = goal?.image.first {
-            imageView.imageFromServerURL(URLString, placeHolder: placeholder)
-        }
         
-        return imageView.image
+        if let image = goal?.image {
+            self.image = image
+        }
     }
     
     @State var progressBarValue:CGFloat = 0
@@ -46,11 +41,11 @@ struct GoalView: View {
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
 
-            CircleImage(image: getImage())
+            CircleImage(image: image, width: 250, height: 250)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
-            ProgressBar(percentage: percentage ?? 0)
+            CircleProgressBar(percentage: percentage ?? 0, width: 250, height: 250, lineWidth: 8)
                 .offset(y: -260)
 
             VStack(alignment: .leading) {

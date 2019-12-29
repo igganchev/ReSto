@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct ProgressBar: View {
+struct CircleProgressBar: View {
     
     let percentage: Float
     
-    init(percentage: Float) {
+    let width: CGFloat
+    let height: CGFloat
+    let lineWidth: CGFloat
+    
+    init(percentage: Float, width: CGFloat, height: CGFloat, lineWidth: CGFloat) {
         self.percentage = percentage
+        self.width = width
+        self.height = height
+        self.lineWidth = lineWidth
     }
     
     @State var spinCircle = false
@@ -21,8 +28,8 @@ struct ProgressBar: View {
         ZStack {
             Circle()
                 .trim(from: 0, to: CGFloat(percentage))
-                .stroke(Color.green, lineWidth: 8)
-                .frame(width: 250, height: 250)
+                .stroke(Color.green, lineWidth: lineWidth)
+                .frame(width: width, height: height)
                 .rotationEffect(.degrees(spinCircle ? -90 : -270), anchor: .center)
                 .animation(Animation.linear(duration: 0.5))
         }

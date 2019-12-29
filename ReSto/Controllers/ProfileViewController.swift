@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UIPickerViewAccessibilityDelegate
                 
                 if let profilePicString = self.mainUser?.profilePicPath {
                     let placeholder = UIImage(named: "placeholder")
-                    self.profileImage.imageFromServerURL(profilePicString, placeHolder: placeholder)
+                    self.profileImage.imageFromServerURL(profilePicString, placeHolder: placeholder) {_ in}
                 }
                 
                 if let user = self.mainUser {

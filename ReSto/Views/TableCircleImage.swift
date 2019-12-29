@@ -1,13 +1,13 @@
 //
-//  CircleImage.swift
+//  TableCircleImage.swift
 //  ReSto
 //
-//  Created by Ivan Ganchev on 15.12.19.
+//  Created by Ivan Ganchev on 29.12.19.
 //
 
 import SwiftUI
 
-struct CircleImage: View {
+struct TableCircleImage: View {
     let image: Image
     let size: CGSize
     
@@ -35,14 +35,16 @@ struct CircleImage: View {
             .frame(width: width, height: height)
             .clipShape(Circle())
             .overlay(
-                Circle().stroke(Color.white, lineWidth: 4))
-            .shadow(radius: 10)
+                Circle().stroke(Color.white, lineWidth: 2.5))
+            .shadow(radius: 3)
         return img
     }
 }
 
-struct CircleImage_Preview: PreviewProvider {
+struct TableCircleImage_Preview: PreviewProvider {
     static var previews: some View {
-        CircleImage(image: nil, width: 250, height: 250)
+        TableCircleImage(image: nil, width: 80, height: 80)
     }
 }
+
+

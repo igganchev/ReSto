@@ -12,7 +12,7 @@ let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
 
-    func imageFromServerURL(_ URLString: String, placeHolder: UIImage?) {
+    func imageFromServerURL(_ URLString: String, placeHolder: UIImage?, completion: @escaping (_ image: UIImage) -> ()) {
 
         self.image = nil
         if let cachedImage = imageCache.object(forKey: NSString(string: URLString)) {
@@ -23,7 +23,6 @@ extension UIImageView {
         if let url = URL(string: URLString) {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
 
-                //print("RESPONSE FROM API: \(response)")
                 if error != nil {
                     print("ERROR LOADING IMAGES FROM URL: \(String(describing: error))")
                     DispatchQueue.main.async {
@@ -36,6 +35,7 @@ extension UIImageView {
                         if let downloadedImage = UIImage(data: data) {
                             imageCache.setObject(downloadedImage, forKey: NSString(string: URLString))
                             self.image = downloadedImage
+                            completion(downloadedImage)
                         }
                     }
                 }

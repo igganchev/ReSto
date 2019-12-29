@@ -16,7 +16,6 @@
 		A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFB203840E800CAC15B /* ProfileViewController.swift */; };
 		A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F012038500100CAC15B /* GoalsTableViewController.swift */; };
 		A7433F04203850A100CAC15B /* GoalsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F03203850A100CAC15B /* GoalsList.swift */; };
-		A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F05203862FF00CAC15B /* GoalViewController.swift */; };
 		A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAF8B3200D3EF200801734 /* AppDelegate.swift */; };
 		A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAF8B5200D3EF200801734 /* LoginController.swift */; };
 		A7DAF8B9200D3EF200801734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8B7200D3EF200801734 /* Main.storyboard */; };
@@ -25,6 +24,8 @@
 		CC16CA6523B8E5C400C3B02F /* TransactionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */; };
 		CC16CA6723B8E8D000C3B02F /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */; };
 		CC16CA6923B8FB6300C3B02F /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6823B8FB6300C3B02F /* Array+Extension.swift */; };
+		CC16CA6D23B9366300C3B02F /* GoalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6C23B9366300C3B02F /* GoalTable.swift */; };
+		CC16CA6F23B94F0500C3B02F /* TableCircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6E23B94F0500C3B02F /* TableCircleImage.swift */; };
 		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
@@ -34,8 +35,7 @@
 		CCF913AD23A68A9F0024DE42 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913AC23A68A9F0024DE42 /* GoalView.swift */; };
 		CCF913AF23A68B010024DE42 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913AE23A68B010024DE42 /* MapView.swift */; };
 		CCF913B123A68B390024DE42 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913B023A68B390024DE42 /* CircleImage.swift */; };
-		CCF913B323A697410024DE42 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913B223A697410024DE42 /* ProgressBar.swift */; };
-		F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A90CA203F74FE00A7AAEA /* GoalCell.swift */; };
+		CCF913B323A697410024DE42 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913B223A697410024DE42 /* CircleProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,6 @@
 		A7433EFB203840E800CAC15B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A7433F012038500100CAC15B /* GoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		A7433F03203850A100CAC15B /* GoalsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsList.swift; sourceTree = "<group>"; };
-		A7433F05203862FF00CAC15B /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		A7DAF8B0200D3EF200801734 /* ReSto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DAF8B3200D3EF200801734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7DAF8B5200D3EF200801734 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -61,6 +60,8 @@
 		CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTable.swift; sourceTree = "<group>"; };
 		CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		CC16CA6823B8FB6300C3B02F /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		CC16CA6C23B9366300C3B02F /* GoalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTable.swift; sourceTree = "<group>"; };
+		CC16CA6E23B94F0500C3B02F /* TableCircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCircleImage.swift; sourceTree = "<group>"; };
 		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -70,8 +71,7 @@
 		CCF913AC23A68A9F0024DE42 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		CCF913AE23A68B010024DE42 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CCF913B023A68B390024DE42 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		CCF913B223A697410024DE42 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		F62A90CA203F74FE00A7AAEA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		CCF913B223A697410024DE42 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 		A7433F0720389CAC00CAC15B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7433F05203862FF00CAC15B /* GoalViewController.swift */,
 				A7DAF8B5200D3EF200801734 /* LoginController.swift */,
 				A7433EFB203840E800CAC15B /* ProfileViewController.swift */,
 				A7433F012038500100CAC15B /* GoalsTableViewController.swift */,
@@ -119,13 +118,14 @@
 		A7433F0B2038B33100CAC15B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F62A90CA203F74FE00A7AAEA /* GoalCell.swift */,
 				CCF913AC23A68A9F0024DE42 /* GoalView.swift */,
 				CCF913AE23A68B010024DE42 /* MapView.swift */,
 				CCF913B023A68B390024DE42 /* CircleImage.swift */,
-				CCF913B223A697410024DE42 /* ProgressBar.swift */,
+				CCF913B223A697410024DE42 /* CircleProgressBar.swift */,
 				CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */,
 				CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */,
+				CC16CA6C23B9366300C3B02F /* GoalTable.swift */,
+				CC16CA6E23B94F0500C3B02F /* TableCircleImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,10 +321,11 @@
 				59A82A0823A5B285001312C0 /* Transaction.swift in Sources */,
 				CCF913B123A68B390024DE42 /* CircleImage.swift in Sources */,
 				CC16CA6923B8FB6300C3B02F /* Array+Extension.swift in Sources */,
+				CC16CA6F23B94F0500C3B02F /* TableCircleImage.swift in Sources */,
 				A7433F04203850A100CAC15B /* GoalsList.swift in Sources */,
 				CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */,
 				A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */,
-				CCF913B323A697410024DE42 /* ProgressBar.swift in Sources */,
+				CCF913B323A697410024DE42 /* CircleProgressBar.swift in Sources */,
 				CCF913AF23A68B010024DE42 /* MapView.swift in Sources */,
 				CC16CA6723B8E8D000C3B02F /* TransactionDetail.swift in Sources */,
 				CCF913AD23A68A9F0024DE42 /* GoalView.swift in Sources */,
@@ -334,11 +335,10 @@
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
 				CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */,
-				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,
 				59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */,
-				F62A90CB203F74FE00A7AAEA /* GoalCell.swift in Sources */,
+				CC16CA6D23B9366300C3B02F /* GoalTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
-class Goal: Codable, JSONGeneratable {
+class Goal: Codable, Identifiable, JSONGeneratable {
     let name: String
     let id: Int
     let goalSum: Int
     let currentSum: Int
     let createdById: Int
-    let image: [String]
+    let imageStr: [String]
+    var image: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -21,20 +23,28 @@ class Goal: Codable, JSONGeneratable {
         case goalSum = "goalSum"
         case currentSum = "currentSum"
         case createdById = "created-by"
-        case image = "image"
+        case imageStr = "image"
     }
     
-    init(name: String, id: Int, goalSum: Int, currentSum: Int, createdBy: Int, image: [String]) {
+    init(name: String, id: Int, goalSum: Int, currentSum: Int, createdBy: Int, imageStr: [String]) {
         self.name = name
         self.id = id
         self.goalSum = goalSum
         self.currentSum = currentSum
         self.createdById = createdBy
-        self.image = image
+        self.imageStr = imageStr
     }
     
     required convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(Goal.self, from: data)
-        self.init(name: me.name, id: me.id, goalSum: me.goalSum, currentSum: me.currentSum, createdBy: me.createdById, image: me.image)
+        self.init(name: me.name, id: me.id, goalSum: me.goalSum, currentSum: me.currentSum, createdBy: me.createdById, imageStr: me.imageStr)
+    }
+    
+    func getImage(completion: @escaping (_ image: UIImage) -> ()) {
+        let placeholder = UIImage(named: "placeholder")
+        let imageView = UIImageView(image: placeholder)
+        if let URLString = self.imageStr.first {
+            imageView.imageFromServerURL(URLString, placeHolder: placeholder, completion: completion)
+        }
     }
 }

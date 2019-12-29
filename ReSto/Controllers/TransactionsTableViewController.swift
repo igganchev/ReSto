@@ -5,7 +5,6 @@
 //  Created by Ivan Ganchev on 14.12.19.
 //
 
-import UIKit
 import Alamofire
 import SwiftUI
 
@@ -57,9 +56,8 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
     func loadData() {
         loadTransactions { [weak self] in
             if let transactionList = self?.transactionList {
-                
                 if let transactions = self?.transactions, transactionList.ids.containsSameElements(as: transactions.map {$0.id}) {
-                    self?.rootView = TransactionTable(transactions: cachedTransactions)
+                    self?.rootView = TransactionTable(transactions: transactions)
                 } else {
                     self?.transactions = []
 

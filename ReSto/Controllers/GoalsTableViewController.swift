@@ -5,23 +5,29 @@
 //  Created by Ivan Ganchev on 14.12.19.
 //
 
-import UIKit
 import Alamofire
+import SwiftUI
 
-class GoalsTableViewController: UITableViewController {
+class GoalsTableViewController: UIHostingController<GoalTable> {
     
-    var goals: GoalsList?
-
+    let dispatchGroup = DispatchGroup()
+    
+    var goalList: GoalsList?
+    var goals: [Goal] = []
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder, rootView: GoalTable())
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        loadGoals { [unowned self] in
-            self.reloadData()
-        }
+        self.navigationController?.navigationBar.isHidden = true
+        loadData()
     }
     
     func loadGoals(completion: @escaping () -> Void) {
-        NetworkManager.getAll(descriptor: "goals") { [unowned self] json in
+        NetworkManager.getAll(descriptor: "goals") { [weak self] json in
             do {
-                self.goals = try GoalsList(json)
+                self?.goalList = try GoalsList(json)
             } catch {
                 print("Could not parse response")
             }
@@ -29,97 +35,45 @@ class GoalsTableViewController: UITableViewController {
         }
     }
     
-    func loadGoal(id: Int, completion: @escaping () -> Void) {
-        NetworkManager.getByID(descriptor: "goal", byID: id) { json in
+    func loadGoal(id: Int) {
+        dispatchGroup.enter()
+        
+        NetworkManager.getByID(descriptor: "goal", byID: id) { [weak self] json in
             do {
                 let goal = try Goal(json)
                 
                 cachedGoals = cachedGoals.filter { $0.id != goal.id }
                 cachedGoals.append(goal)
+                
+                goal.getImage { image in
+                    goal.image = image
+                    self?.goals.append(goal)
+                    self?.dispatchGroup.leave()
+                }
             } catch {
                 print("Could not parse response")
             }
-            completion()
         }
     }
     
-    func reloadData() {
-        guard let ids = goals?.ids else { return }
-        for id in ids {
-            if let indexToReload = cachedGoals.firstIndex(where: { $0.id == id }) {
-                reloadCell(index: indexToReload)
-            } else {
-                loadGoal(id: id) { [unowned self] in
-                    self.reloadCell(index: ids.firstIndex(of: id)!)
+    func loadData() {
+        loadGoals { [weak self] in
+            if let goalList = self?.goalList {
+                if let goals = self?.goals, goalList.ids.containsSameElements(as: goals.map {$0.id}) {
+                    self?.rootView = GoalTable(goals: goals)
+                } else {
+                    self?.goals = []
+
+                    for goalID in goalList.ids {
+                        self?.loadGoal(id: goalID)
+                    }
+            
+                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                        if let goals = self?.goals {
+                            self?.rootView = GoalTable(goals: goals)
+                        }
+                    }
                 }
-            }
-        }
-    }
-    
-    func reloadCell(index: Int) {
-        let indexPath = IndexPath(row: index, section: 0)
-        
-        DispatchQueue.main.async { [unowned self] in
-            if self.lastItemsInSection == (self.goals?.ids.count ?? 0) {
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            } else {
-                self.tableView.reloadSections([0], with: .automatic)
-            }
-            
-        }
-    }
-
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    var lastItemsInSection = 0
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lastItemsInSection = goals?.ids.count ?? 0
-        return lastItemsInSection
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalCell
-        
-        if let t = goals {
-            let goal = cachedGoals.first(where: {$0.id == t.ids[indexPath.row]})
-            cell.name.text = goal?.name
-            
-            if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
-                let percentage = Float(currentSum) / Float(goalSum)
-                cell.progressView.progress = percentage
-                cell.progress.text = "$\(String(currentSum)) of $\(String(goalSum))"
-                cell.percentage.text = "\(Int(percentage*100))%"
-            }
-            
-            cell.goalImage.layer.borderWidth = 0.5
-            cell.goalImage.layer.masksToBounds = false
-            cell.goalImage.layer.borderColor = UIColor.gray.cgColor
-            cell.goalImage.layer.cornerRadius = cell.goalImage.frame.height/2
-            cell.goalImage.clipsToBounds = true
-            if let imagePath = goal?.image[0] {
-                let placeholder = UIImage(named: "placeholder")
-                cell.goalImage.imageFromServerURL(imagePath, placeHolder: placeholder)
-            }
-            cell.accessoryType = .disclosureIndicator
-        }
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow{
-            let goalID = goals?.ids[indexPath.row]
-            if let goalVC = segue.destination as? GoalViewController {
-                goalVC.goalID = goalID
             }
         }
     }
