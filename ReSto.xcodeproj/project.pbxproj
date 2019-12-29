@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F1EE391F0A90F0F7AAC5621 /* Pods_ReSto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */; };
 		59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */; };
-		59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0523A5AEAE001312C0 /* TransactionCell.swift */; };
 		59A82A0823A5B285001312C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0723A5B285001312C0 /* Transaction.swift */; };
 		59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0923A5B341001312C0 /* TransactionList.swift */; };
 		59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */; };
@@ -23,6 +22,9 @@
 		A7DAF8B9200D3EF200801734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8B7200D3EF200801734 /* Main.storyboard */; };
 		A7DAF8BB200D3EF200801734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8BA200D3EF200801734 /* Assets.xcassets */; };
 		A7DAF8BE200D3EF200801734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DAF8BC200D3EF200801734 /* LaunchScreen.storyboard */; };
+		CC16CA6523B8E5C400C3B02F /* TransactionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */; };
+		CC16CA6723B8E8D000C3B02F /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */; };
+		CC16CA6923B8FB6300C3B02F /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16CA6823B8FB6300C3B02F /* Array+Extension.swift */; };
 		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
@@ -40,7 +42,6 @@
 		2EEC0EAF6F063F75F1B2EB9E /* Pods_ReSto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE79CB0BE3DD67F711B6135 /* Pods-ReSto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.release.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.release.xcconfig"; sourceTree = "<group>"; };
 		59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
-		59A82A0523A5AEAE001312C0 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		59A82A0723A5B285001312C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		59A82A0923A5B341001312C0 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +58,9 @@
 		A7DAF8BA200D3EF200801734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7DAF8BD200D3EF200801734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7DAF8BF200D3EF200801734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTable.swift; sourceTree = "<group>"; };
+		CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
+		CC16CA6823B8FB6300C3B02F /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -116,11 +120,12 @@
 			isa = PBXGroup;
 			children = (
 				F62A90CA203F74FE00A7AAEA /* GoalCell.swift */,
-				59A82A0523A5AEAE001312C0 /* TransactionCell.swift */,
 				CCF913AC23A68A9F0024DE42 /* GoalView.swift */,
 				CCF913AE23A68B010024DE42 /* MapView.swift */,
 				CCF913B023A68B390024DE42 /* CircleImage.swift */,
 				CCF913B223A697410024DE42 /* ProgressBar.swift */,
+				CC16CA6423B8E5C400C3B02F /* TransactionTable.swift */,
+				CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */,
 				CCE4EF1B23A625900078045C /* MyUIProgressView.swift */,
+				CC16CA6823B8FB6300C3B02F /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,15 +315,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE4EF2123A63A010078045C /* JSONGeneratable.swift in Sources */,
+				CC16CA6523B8E5C400C3B02F /* TransactionTable.swift in Sources */,
 				CC29B36E23A59BAB00245044 /* User.swift in Sources */,
 				A7433EF920376BB800CAC15B /* Token.swift in Sources */,
 				59A82A0823A5B285001312C0 /* Transaction.swift in Sources */,
 				CCF913B123A68B390024DE42 /* CircleImage.swift in Sources */,
+				CC16CA6923B8FB6300C3B02F /* Array+Extension.swift in Sources */,
 				A7433F04203850A100CAC15B /* GoalsList.swift in Sources */,
 				CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */,
 				A7DAF8B6200D3EF200801734 /* LoginController.swift in Sources */,
 				CCF913B323A697410024DE42 /* ProgressBar.swift in Sources */,
 				CCF913AF23A68B010024DE42 /* MapView.swift in Sources */,
+				CC16CA6723B8E8D000C3B02F /* TransactionDetail.swift in Sources */,
 				CCF913AD23A68A9F0024DE42 /* GoalView.swift in Sources */,
 				CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */,
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
@@ -325,7 +334,6 @@
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
 				CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */,
-				59A82A0623A5AEAE001312C0 /* TransactionCell.swift in Sources */,
 				A7433F06203862FF00CAC15B /* GoalViewController.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Transaction: Codable, JSONGeneratable {
+class Transaction: Codable, Identifiable, JSONGeneratable {
     
     let name: String
     let id: Int

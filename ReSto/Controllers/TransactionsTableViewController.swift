@@ -7,21 +7,28 @@
 
 import UIKit
 import Alamofire
+import SwiftUI
 
-class TransactionsTableViewController: UITableViewController {
+class TransactionsTableViewController: UIHostingController<TransactionTable> {
     
-    var transactions: TransactionList?
-
+    let dispatchGroup = DispatchGroup()
+    
+    var transactionList: TransactionList?
+    var transactions: [Transaction] = []
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder, rootView: TransactionTable())
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        loadTransactions { [unowned self] in
-            self.reloadData()
-        }
+        self.navigationController?.navigationBar.isHidden = true
+        loadData()
     }
     
     func loadTransactions(completion: @escaping () -> Void) {
-        NetworkManager.getAll(descriptor: "transactions") { [unowned self] json in
+        NetworkManager.getAll(descriptor: "transactions") { [weak self] json in
             do {
-                self.transactions = try TransactionList(json)
+                self?.transactionList = try TransactionList(json)
             } catch {
                 print("Could not parse response")
             }
@@ -29,104 +36,49 @@ class TransactionsTableViewController: UITableViewController {
         }
     }
     
-    func loadTransaction(id: Int, completion: @escaping () -> Void) {
-        NetworkManager.getByID(descriptor: "transaction", byID: id) { json in
+    func loadTransaction(id: Int) {
+        dispatchGroup.enter()
+        
+        NetworkManager.getByID(descriptor: "transaction", byID: id) { [weak self] json in
             do {
                 let transaction = try Transaction(json)
                 
                 cachedTransactions = cachedTransactions.filter { $0.id != transaction.id }
                 cachedTransactions.append(transaction)
+                
+                self?.transactions.append(transaction)
+                self?.dispatchGroup.leave()
             } catch {
                 print("Could not parse response")
             }
-            completion()
         }
     }
     
-    func reloadData() {
-        guard let ids = transactions?.ids else { return }
-        for id in ids {
-            if let indexToReload = cachedTransactions.firstIndex(where: { $0.id == id }) {
-                reloadCell(index: indexToReload)
-            } else {
-                loadTransaction(id: id) { [unowned self] in
-                    self.reloadCell(index: ids.firstIndex(of: id)!)
+    func loadData() {
+        loadTransactions { [weak self] in
+            if let transactionList = self?.transactionList {
+                
+                if let transactions = self?.transactions, transactionList.ids.containsSameElements(as: transactions.map {$0.id}) {
+                    self?.rootView = TransactionTable(transactions: cachedTransactions)
+                } else {
+                    self?.transactions = []
+
+                    for transactionID in transactionList.ids {
+                        self?.loadTransaction(id: transactionID)
+                    }
+            
+                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                        if let transactions = self?.transactions {
+                            self?.rootView = TransactionTable(transactions: transactions)
+                        }
+                    }
                 }
             }
         }
     }
-    
-    func reloadCell(index: Int) {
-        let indexPath = IndexPath(row: index, section: 0)
-        
-        DispatchQueue.main.async { [unowned self] in
-            if self.lastItemsInSection == (self.transactions?.ids.count ?? 0) {
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            } else {
-                self.tableView.reloadSections([0], with: .automatic)
-            }
-            
-        }
-    }
 
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    var lastItemsInSection = 0
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lastItemsInSection = transactions?.ids.count ?? 0
-        return lastItemsInSection
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionCell
-        
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale(identifier: "de_DE")
-        
-        if let t = transactions {
-            let transaction = cachedTransactions.first(where: {$0.id == t.ids[indexPath.row]})
-            
-            if let name = transaction?.name, let date = transaction?.date, let sum = transaction?.sum {
-                
-                
-                cell.name.text = name
-                
-                let dateArr = date.split(separator: " ")
-                cell.date.text = String(dateArr[0])
-                
-                let nextValue = min(next$(a: sum, n: 5), next$(a: sum, n: 10))
-                let priceStringSaved = currencyFormatter.string(from:  NSNumber(value: nextValue - sum))
-                cell.saved.text = "+\(priceStringSaved ?? "0") (saved)"
-                
-                let priceStringSum = currencyFormatter.string(from: NSNumber(value: sum))
-                cell.sum.text = "-\(priceStringSum ?? "0")"
-            }
-        }
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-    }
     
     func next$(a: Double, n: Double) -> Double {
         return ceil(a/n) * n;
     }
-    
-    // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let indexPath = tableView.indexPathForSelectedRow{
-//            let transactionID = transactions?.ids[indexPath.row]
-//            if let goalVC = segue.destination as? GoalViewController {
-//                goalVC.goalID = goalID
-//            }
-//        }
-//    }
 }

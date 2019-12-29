@@ -447,89 +447,6 @@
             </objects>
             <point key="canvasLocation" x="-106" y="-170"/>
         </scene>
-        <!--Transactions-->
-        <scene sceneID="iSF-Nt-cAX">
-            <objects>
-                <tableViewController id="b56-LE-eOY" customClass="TransactionsTableViewController" customModule="ReSto" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="z38-Mq-NHi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transactionCell" rowHeight="95" id="Yhv-Fm-xqb" customClass="TransactionCell" customModule="ReSto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yhv-Fm-xqb" id="uKh-Fh-jru">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of transaction" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-4W-vav">
-                                            <rect key="frame" x="20" y="19" width="280" height="20"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icu-gZ-6SA">
-                                            <rect key="frame" x="20" y="43" width="97" height="35"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-7z-5A3">
-                                            <rect key="frame" x="321" y="13" width="73" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="73" id="yvK-Gt-XZK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved 1$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-0e-gY0">
-                                            <rect key="frame" x="235" y="50" width="159" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Fqz-gb-1Ja"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Mwn-7z-5A3" secondAttribute="trailing" constant="20" id="10l-NL-MLz"/>
-                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="top" secondItem="uKh-Fh-jru" secondAttribute="top" constant="19" id="EIG-Rf-TW2"/>
-                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="leading" secondItem="YLj-0e-gY0" secondAttribute="leading" constant="86" id="J9F-DJ-rRa"/>
-                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="leading" secondItem="uKh-Fh-jru" secondAttribute="leading" constant="20" id="LnG-0S-FZc"/>
-                                        <constraint firstItem="YLj-0e-gY0" firstAttribute="top" secondItem="Mwn-7z-5A3" secondAttribute="bottom" constant="5" id="N9I-MO-Nls"/>
-                                        <constraint firstAttribute="bottom" secondItem="YLj-0e-gY0" secondAttribute="bottom" constant="24" id="NOq-NY-w0G"/>
-                                        <constraint firstAttribute="bottom" secondItem="Icu-gZ-6SA" secondAttribute="bottom" constant="17" id="SDf-WB-rth"/>
-                                        <constraint firstAttribute="trailing" secondItem="YLj-0e-gY0" secondAttribute="trailing" constant="20" id="c6C-2s-lCQ"/>
-                                        <constraint firstItem="Icu-gZ-6SA" firstAttribute="top" secondItem="Rbj-4W-vav" secondAttribute="bottom" constant="4" id="eGx-zr-yPb"/>
-                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="centerY" secondItem="Rbj-4W-vav" secondAttribute="centerY" id="g8e-wy-jbg"/>
-                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="leading" secondItem="Rbj-4W-vav" secondAttribute="trailing" constant="21" id="n7O-bf-OnT"/>
-                                        <constraint firstItem="YLj-0e-gY0" firstAttribute="leading" secondItem="Icu-gZ-6SA" secondAttribute="trailing" constant="118" id="nM9-tH-Fmi"/>
-                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="top" secondItem="uKh-Fh-jru" secondAttribute="top" constant="13" id="v2X-tJ-Bzh"/>
-                                        <constraint firstItem="Icu-gZ-6SA" firstAttribute="leading" secondItem="uKh-Fh-jru" secondAttribute="leading" constant="20" id="vcz-hH-6Ew"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="date" destination="Icu-gZ-6SA" id="m4Z-ka-dc4"/>
-                                    <outlet property="name" destination="Rbj-4W-vav" id="lmM-Zz-TQo"/>
-                                    <outlet property="saved" destination="YLj-0e-gY0" id="4io-AM-8TE"/>
-                                    <outlet property="sum" destination="Mwn-7z-5A3" id="9U5-xv-ROb"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="b56-LE-eOY" id="gSS-M2-Z6M"/>
-                            <outlet property="delegate" destination="b56-LE-eOY" id="CWC-QR-19Z"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Transactions" id="gsi-41-PTx"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jis-Ce-PQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1602.8985507246377" y="-640.17857142857144"/>
-        </scene>
         <!--Trending-->
         <scene sceneID="XWY-vB-4ck">
             <objects>
@@ -600,12 +517,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="b56-LE-eOY" kind="relationship" relationship="rootViewController" id="fQl-Hb-rkM"/>
+                        <segue destination="u1U-hd-oN4" kind="relationship" relationship="rootViewController" id="tid-On-061"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22I-QS-gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="692.75362318840587" y="-640.17857142857144"/>
+        </scene>
+        <!--Transactions Table View Controller-->
+        <scene sceneID="sLF-g4-yuK">
+            <objects>
+                <hostingController id="u1U-hd-oN4" customClass="TransactionsTableViewController" customModule="ReSto" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xWS-2f-l7d"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozn-1n-hJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="-640"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PY2-Wd-iUi">
