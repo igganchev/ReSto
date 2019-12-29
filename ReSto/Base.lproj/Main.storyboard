@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -447,7 +447,7 @@
             </objects>
             <point key="canvasLocation" x="-106" y="-170"/>
         </scene>
-        <!--Transactions Table View Controller-->
+        <!--Transactions-->
         <scene sceneID="iSF-Nt-cAX">
             <objects>
                 <tableViewController id="b56-LE-eOY" customClass="TransactionsTableViewController" customModule="ReSto" customModuleProvider="target" sceneMemberID="viewController">
@@ -463,37 +463,52 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-4W-vav">
-                                            <rect key="frame" x="20" y="11" width="225.5" height="31.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of transaction" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-4W-vav">
+                                            <rect key="frame" x="20" y="19" width="280" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icu-gZ-6SA">
-                                            <rect key="frame" x="20" y="51" width="97" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icu-gZ-6SA">
+                                            <rect key="frame" x="20" y="43" width="97" height="35"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved 1$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-0e-gY0">
-                                            <rect key="frame" x="277" y="51" width="93" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-7z-5A3">
+                                            <rect key="frame" x="321" y="13" width="73" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="73" id="yvK-Gt-XZK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-7z-5A3">
-                                            <rect key="frame" x="285" y="11" width="85" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved 1$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-0e-gY0">
+                                            <rect key="frame" x="235" y="50" width="159" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Fqz-gb-1Ja"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="leading" secondItem="uKh-Fh-jru" secondAttribute="leadingMargin" id="PEi-f7-xZg"/>
-                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="top" secondItem="uKh-Fh-jru" secondAttribute="topMargin" id="hsL-uJ-QiK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mwn-7z-5A3" secondAttribute="trailing" constant="20" id="10l-NL-MLz"/>
+                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="top" secondItem="uKh-Fh-jru" secondAttribute="top" constant="19" id="EIG-Rf-TW2"/>
+                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="leading" secondItem="YLj-0e-gY0" secondAttribute="leading" constant="86" id="J9F-DJ-rRa"/>
+                                        <constraint firstItem="Rbj-4W-vav" firstAttribute="leading" secondItem="uKh-Fh-jru" secondAttribute="leading" constant="20" id="LnG-0S-FZc"/>
+                                        <constraint firstItem="YLj-0e-gY0" firstAttribute="top" secondItem="Mwn-7z-5A3" secondAttribute="bottom" constant="5" id="N9I-MO-Nls"/>
+                                        <constraint firstAttribute="bottom" secondItem="YLj-0e-gY0" secondAttribute="bottom" constant="24" id="NOq-NY-w0G"/>
+                                        <constraint firstAttribute="bottom" secondItem="Icu-gZ-6SA" secondAttribute="bottom" constant="17" id="SDf-WB-rth"/>
+                                        <constraint firstAttribute="trailing" secondItem="YLj-0e-gY0" secondAttribute="trailing" constant="20" id="c6C-2s-lCQ"/>
+                                        <constraint firstItem="Icu-gZ-6SA" firstAttribute="top" secondItem="Rbj-4W-vav" secondAttribute="bottom" constant="4" id="eGx-zr-yPb"/>
+                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="centerY" secondItem="Rbj-4W-vav" secondAttribute="centerY" id="g8e-wy-jbg"/>
+                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="leading" secondItem="Rbj-4W-vav" secondAttribute="trailing" constant="21" id="n7O-bf-OnT"/>
+                                        <constraint firstItem="YLj-0e-gY0" firstAttribute="leading" secondItem="Icu-gZ-6SA" secondAttribute="trailing" constant="118" id="nM9-tH-Fmi"/>
+                                        <constraint firstItem="Mwn-7z-5A3" firstAttribute="top" secondItem="uKh-Fh-jru" secondAttribute="top" constant="13" id="v2X-tJ-Bzh"/>
+                                        <constraint firstItem="Icu-gZ-6SA" firstAttribute="leading" secondItem="uKh-Fh-jru" secondAttribute="leading" constant="20" id="vcz-hH-6Ew"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -509,7 +524,7 @@
                             <outlet property="delegate" destination="b56-LE-eOY" id="CWC-QR-19Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gsi-41-PTx"/>
+                    <navigationItem key="navigationItem" title="Transactions" id="gsi-41-PTx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jis-Ce-PQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -84,27 +84,29 @@ class TransactionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionCell
         
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale(identifier: "de_DE")
+        
         if let t = transactions {
             let transaction = cachedTransactions.first(where: {$0.id == t.ids[indexPath.row]})
-            cell.name.text = transaction?.name
             
-//            if let goalSum = transactions?.goalSum, let currentSum = goal?.currentSum {
-//                let percentage = Float(currentSum) / Float(goalSum)
-//                cell.progressView.progress = percentage
-//                cell.progress.text = "$\(String(currentSum)) of $\(String(goalSum))"
-//                cell.percentage.text = "\(Int(percentage*100))%"
-//            }
-//
-//            cell.goalImage.layer.borderWidth = 0.5
-//            cell.goalImage.layer.masksToBounds = false
-//            cell.goalImage.layer.borderColor = UIColor.gray.cgColor
-//            cell.goalImage.layer.cornerRadius = cell.goalImage.frame.height/2
-//            cell.goalImage.clipsToBounds = true
-//            if let imagePath = goal?.image[0] {
-//                let placeholder = UIImage(named: "placeholder")
-//                cell.goalImage.imageFromServerURL(imagePath, placeHolder: placeholder)
-//            }
-//            cell.accessoryType = .disclosureIndicator
+            if let name = transaction?.name, let date = transaction?.date, let sum = transaction?.sum {
+                
+                
+                cell.name.text = name
+                
+                let dateArr = date.split(separator: " ")
+                cell.date.text = String(dateArr[0])
+                
+                let nextValue = min(next$(a: sum, n: 5), next$(a: sum, n: 10))
+                let priceStringSaved = currencyFormatter.string(from:  NSNumber(value: nextValue - sum))
+                cell.saved.text = "+\(priceStringSaved ?? "0") (saved)"
+                
+                let priceStringSum = currencyFormatter.string(from: NSNumber(value: sum))
+                cell.sum.text = "-\(priceStringSum ?? "0")"
+            }
         }
 
         return cell
@@ -112,6 +114,10 @@ class TransactionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
+    }
+    
+    func next$(a: Double, n: Double) -> Double {
+        return ceil(a/n) * n;
     }
     
     // MARK: - Navigation
