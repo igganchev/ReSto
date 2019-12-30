@@ -15,6 +15,7 @@ class Goal: Codable, Identifiable, JSONGeneratable {
     let currentSum: Int
     let createdById: Int
     let imageStr: [String]
+    
     var image: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {
@@ -38,14 +39,6 @@ class Goal: Codable, Identifiable, JSONGeneratable {
     required convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(Goal.self, from: data)
         self.init(name: me.name, id: me.id, goalSum: me.goalSum, currentSum: me.currentSum, createdBy: me.createdById, imageStr: me.imageStr)
-    }
-    
-    func getImage(completion: @escaping (_ image: UIImage) -> ()) {
-        let placeholder = UIImage(named: "placeholder")
-        let imageView = UIImageView(image: placeholder)
-        if let URLString = self.imageStr.first {
-            imageView.imageFromServerURL(URLString, placeHolder: placeholder, completion: completion)
-        }
     }
     
     func getCurrentAmount() -> String? {

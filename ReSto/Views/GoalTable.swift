@@ -38,7 +38,6 @@ struct GoalCell : View {
                 Text(goal.name)
                     .font(.headline)
                     .foregroundColor(.secondary)
-                    //.padding(.bottom)
                     .lineLimit(1)
                 
                 Text("\(String(Int(Float(goal.currentSum) / Float(goal.goalSum)*100)))%")

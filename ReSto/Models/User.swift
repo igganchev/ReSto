@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class User: Codable, JSONGeneratable {
     let name: String
@@ -14,7 +15,9 @@ class User: Codable, JSONGeneratable {
     let roundingUp: Int
     let savedTotal: Double
     let numberOfTransactions: Int
-    let profilePicPath: String
+    let imageStr: String
+    
+    var image: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -23,22 +26,22 @@ class User: Codable, JSONGeneratable {
         case roundingUp = "roundingUp"
         case savedTotal = "savedTotal"
         case numberOfTransactions = "numberOfTransactions"
-        case profilePicPath = "profile-pic"
+        case imageStr = "profile-pic"
     }
     
-    init(name: String, id: Int, frequency: Int, roundingUp: Int, savedTotal: Double, numberOfTransactions: Int, profilePic: String) {
+    init(name: String, id: Int, frequency: Int, roundingUp: Int, savedTotal: Double, numberOfTransactions: Int, imageStr: String) {
         self.name = name
         self.id = id
         self.frequency = frequency
         self.roundingUp = roundingUp
         self.savedTotal = savedTotal
         self.numberOfTransactions = numberOfTransactions
-        self.profilePicPath = profilePic
+        self.imageStr = imageStr
     }
     
     required convenience init(data: Data) throws {
         let me = try JSONDecoder().decode(User.self, from: data)
-        self.init(name: me.name, id: me.id, frequency: me.frequency, roundingUp: me.roundingUp, savedTotal: me.savedTotal, numberOfTransactions: me.numberOfTransactions, profilePic: me.profilePicPath)
+        self.init(name: me.name, id: me.id, frequency: me.frequency, roundingUp: me.roundingUp, savedTotal: me.savedTotal, numberOfTransactions: me.numberOfTransactions, imageStr: me.imageStr)
     }
 }
 

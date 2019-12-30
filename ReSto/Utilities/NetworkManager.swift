@@ -25,7 +25,7 @@ class NetworkManager {
                 }
                 
                 if let json = response.result.value {
-                        completion(json)
+                    completion(json)
                 }
         }
     }
@@ -46,7 +46,7 @@ class NetworkManager {
                 }
                 
                 if let json = response.result.value {
-                        completion(json)
+                    completion(json)
                 }
         }
     }
@@ -64,8 +64,16 @@ class NetworkManager {
                 }
                 
                 if let json = response.result.value {
-                        completion(json)
+                    completion(json)
                 }
+        }
+    }
+    
+    static func getImage(fromURL URLString: String?, completion: @escaping (_ image: UIImage) -> ()) {
+        let placeholder = UIImage(named: "placeholder")
+        let imageView = UIImageView(image: placeholder)
+        if let URLString = URLString {
+            imageView.imageFromServerURL(URLString, placeHolder: placeholder, completion: completion)
         }
     }
 }

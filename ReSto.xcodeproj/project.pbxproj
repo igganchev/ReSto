@@ -13,7 +13,7 @@
 		59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0923A5B341001312C0 /* TransactionList.swift */; };
 		59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */; };
 		A7433EF920376BB800CAC15B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EF820376BB800CAC15B /* Token.swift */; };
-		A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFB203840E800CAC15B /* ProfileViewController.swift */; };
+		A7433EFC203840E800CAC15B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433EFB203840E800CAC15B /* UserViewController.swift */; };
 		A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F012038500100CAC15B /* GoalsTableViewController.swift */; };
 		A7433F04203850A100CAC15B /* GoalsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7433F03203850A100CAC15B /* GoalsList.swift */; };
 		A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAF8B3200D3EF200801734 /* AppDelegate.swift */; };
@@ -30,6 +30,7 @@
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
 		CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */; };
+		CCE344AC23BA353B004ACCEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE344AB23BA353B004ACCEC /* UserView.swift */; };
 		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
 		CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1E23A62D960078045C /* NetworkManager.swift */; };
 		CCE4EF2123A63A010078045C /* JSONGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF2023A63A010078045C /* JSONGeneratable.swift */; };
@@ -48,7 +49,7 @@
 		59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		80C02EE3AC49AA4572C12C8C /* Pods-ReSto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSto.debug.xcconfig"; path = "Target Support Files/Pods-ReSto/Pods-ReSto.debug.xcconfig"; sourceTree = "<group>"; };
 		A7433EF820376BB800CAC15B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		A7433EFB203840E800CAC15B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A7433EFB203840E800CAC15B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A7433F012038500100CAC15B /* GoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		A7433F03203850A100CAC15B /* GoalsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsList.swift; sourceTree = "<group>"; };
 		A7DAF8B0200D3EF200801734 /* ReSto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +68,7 @@
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		CCE344AB23BA353B004ACCEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
 		CCE4EF1E23A62D960078045C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CCE4EF2023A63A010078045C /* JSONGeneratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGeneratable.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DAF8B5200D3EF200801734 /* LoginController.swift */,
-				A7433EFB203840E800CAC15B /* ProfileViewController.swift */,
+				A7433EFB203840E800CAC15B /* UserViewController.swift */,
 				A7433F012038500100CAC15B /* GoalsTableViewController.swift */,
 				59A82A0323A5AE81001312C0 /* TransactionsTableViewController.swift */,
 				59A82A0B23A5B69F001312C0 /* AddGoalViewController.swift */,
@@ -128,6 +130,7 @@
 				CC16CA6623B8E8D000C3B02F /* TransactionDetail.swift */,
 				CC16CA6C23B9366300C3B02F /* GoalTable.swift */,
 				CC16CA6E23B94F0500C3B02F /* TableCircleImage.swift */,
+				CCE344AB23BA353B004ACCEC /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,7 +337,7 @@
 				CCF913AD23A68A9F0024DE42 /* GoalDetail.swift in Sources */,
 				CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */,
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
-				A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */,
+				A7433EFC203840E800CAC15B /* UserViewController.swift in Sources */,
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
 				CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
@@ -342,6 +345,7 @@
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,
 				A7DAF8B4200D3EF200801734 /* AppDelegate.swift in Sources */,
 				59A82A0423A5AE81001312C0 /* TransactionsTableViewController.swift in Sources */,
+				CCE344AC23BA353B004ACCEC /* UserView.swift in Sources */,
 				CC16CA6D23B9366300C3B02F /* GoalTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

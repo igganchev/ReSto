@@ -45,7 +45,7 @@ class GoalsTableViewController: UIHostingController<GoalTable> {
                 cachedGoals = cachedGoals.filter { $0.id != goal.id }
                 cachedGoals.append(goal)
                 
-                goal.getImage { image in
+                NetworkManager.getImage(fromURL: goal.imageStr.first) { [weak self] image in
                     goal.image = image
                     self?.goals.append(goal)
                     self?.dispatchGroup.leave()

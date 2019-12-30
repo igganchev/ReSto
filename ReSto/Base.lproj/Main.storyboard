@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1014" y="-170"/>
+            <point key="canvasLocation" x="-1494" y="408"/>
         </scene>
         <!--Add Goal-->
         <scene sceneID="NgR-M1-cGy">
@@ -158,127 +158,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDT-KL-WyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZxY-gP-KPl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="1500"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="Slt-mq-JuT">
-            <objects>
-                <viewController id="MIi-aj-FPd" customClass="ProfileViewController" customModule="ReSto" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gbr-6l-awM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-rK-ToF">
-                                <rect key="frame" x="16" y="56" width="382" height="191"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzy-ft-vjg">
-                                        <rect key="frame" x="0.0" y="159" width="382" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-1p-UQ3">
-                                        <rect key="frame" x="127.5" y="16" width="127" height="127"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="6K2-1p-UQ3" secondAttribute="height" id="4Yi-Oj-WXT"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zzy-ft-vjg" secondAttribute="bottom" id="Bex-ef-vUe"/>
-                                    <constraint firstAttribute="width" secondItem="5J7-rK-ToF" secondAttribute="height" multiplier="2:1" id="GN9-UA-gRx"/>
-                                    <constraint firstItem="zzy-ft-vjg" firstAttribute="top" secondItem="6K2-1p-UQ3" secondAttribute="bottom" constant="16" id="GoF-7E-SY3"/>
-                                    <constraint firstItem="6K2-1p-UQ3" firstAttribute="width" relation="lessThanOrEqual" secondItem="5J7-rK-ToF" secondAttribute="width" multiplier="1:2" id="Tc1-kl-q8D"/>
-                                    <constraint firstItem="6K2-1p-UQ3" firstAttribute="height" secondItem="5J7-rK-ToF" secondAttribute="height" multiplier="1:1.5" id="WUt-oL-Dgo"/>
-                                    <constraint firstItem="zzy-ft-vjg" firstAttribute="leading" secondItem="5J7-rK-ToF" secondAttribute="leading" id="leo-X5-0vL"/>
-                                    <constraint firstItem="6K2-1p-UQ3" firstAttribute="centerY" secondItem="5J7-rK-ToF" secondAttribute="centerY" constant="-16" id="nx2-l4-SwO"/>
-                                    <constraint firstAttribute="trailing" secondItem="zzy-ft-vjg" secondAttribute="trailing" id="zBZ-WB-ouQ"/>
-                                    <constraint firstItem="6K2-1p-UQ3" firstAttribute="centerX" secondItem="5J7-rK-ToF" secondAttribute="centerX" id="zow-mH-xLy"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="UIQ-fE-dYi">
-                                <rect key="frame" x="20" y="287" width="374" height="107"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Totla saved " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAg-jF-nMX">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of transactions " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-Fi-RBY">
-                                        <rect key="frame" x="0.0" y="59" width="374" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LhP-8A-NFo">
-                                <rect key="frame" x="20" y="424" width="374" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose how often you want to save your money" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-lu-TfZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5Z-zD-tRH">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="60"/>
-                                    </pickerView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="gPY-Jc-ddG"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dPY-2t-GNd">
-                                <rect key="frame" x="20" y="574" width="374" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose how much do you want to rouund up your savings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UT1-5n-Vue">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihP-HF-w8K">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="60"/>
-                                    </pickerView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="W4P-L3-kw1"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dPY-2t-GNd" firstAttribute="top" secondItem="LhP-8A-NFo" secondAttribute="bottom" constant="30" id="1x7-TA-Nqt"/>
-                            <constraint firstItem="5J7-rK-ToF" firstAttribute="top" secondItem="DCp-Jn-la7" secondAttribute="top" id="25c-yX-v8T"/>
-                            <constraint firstItem="LhP-8A-NFo" firstAttribute="leading" secondItem="DCp-Jn-la7" secondAttribute="leading" constant="20" id="6ds-Za-iId"/>
-                            <constraint firstItem="DCp-Jn-la7" firstAttribute="trailing" secondItem="5J7-rK-ToF" secondAttribute="trailing" constant="16" id="NIb-Ph-G0K"/>
-                            <constraint firstItem="LhP-8A-NFo" firstAttribute="top" secondItem="UIQ-fE-dYi" secondAttribute="bottom" constant="30" id="Sf2-sh-VDZ"/>
-                            <constraint firstItem="dPY-2t-GNd" firstAttribute="leading" secondItem="DCp-Jn-la7" secondAttribute="leading" constant="20" id="V0d-ux-AK3"/>
-                            <constraint firstItem="UIQ-fE-dYi" firstAttribute="top" secondItem="5J7-rK-ToF" secondAttribute="bottom" constant="40" id="gac-lo-ave"/>
-                            <constraint firstItem="5J7-rK-ToF" firstAttribute="leading" secondItem="DCp-Jn-la7" secondAttribute="leading" constant="16" id="iiu-xe-Lu6"/>
-                            <constraint firstItem="LhP-8A-NFo" firstAttribute="centerX" secondItem="DCp-Jn-la7" secondAttribute="centerX" id="pgE-8V-aHr"/>
-                            <constraint firstItem="UIQ-fE-dYi" firstAttribute="centerX" secondItem="DCp-Jn-la7" secondAttribute="centerX" id="qpf-pO-JH5"/>
-                            <constraint firstItem="UIQ-fE-dYi" firstAttribute="leading" secondItem="DCp-Jn-la7" secondAttribute="leading" constant="20" id="sgA-IK-cau"/>
-                            <constraint firstItem="dPY-2t-GNd" firstAttribute="centerX" secondItem="DCp-Jn-la7" secondAttribute="centerX" id="uzL-wr-yEP"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="DCp-Jn-la7"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Profile" id="QMG-4G-tY8"/>
-                    <connections>
-                        <outlet property="frequency" destination="g5Z-zD-tRH" id="fFX-HA-Ec8"/>
-                        <outlet property="nameLabel" destination="zzy-ft-vjg" id="JLb-0m-LU4"/>
-                        <outlet property="numberOfTransactions" destination="oLV-Fi-RBY" id="Aqt-aq-kyp"/>
-                        <outlet property="profileImage" destination="6K2-1p-UQ3" id="6Xu-xy-oK0"/>
-                        <outlet property="roundingUps" destination="ihP-HF-w8K" id="S1q-qb-vkz"/>
-                        <outlet property="savedTotal" destination="VAg-jF-nMX" id="9Kp-Iv-DYG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdi-gr-euR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6028.985507246377" y="-76.339285714285708"/>
+            <point key="canvasLocation" x="1577" y="1500"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NvY-AV-GPc">
@@ -299,7 +179,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBw-f3-z5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="-170"/>
+            <point key="canvasLocation" x="-517" y="409"/>
         </scene>
         <!--My Goals-->
         <scene sceneID="XWY-vB-4ck">
@@ -347,7 +227,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4S-2e-ueF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4.3478260869565224" y="1500"/>
+            <point key="canvasLocation" x="774" y="1500"/>
         </scene>
         <!--Profile-->
         <scene sceneID="e4k-KE-u1H">
@@ -362,12 +242,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MIi-aj-FPd" kind="relationship" relationship="rootViewController" id="Lcc-tU-m8G"/>
+                        <segue destination="W9m-zz-SSg" kind="relationship" relationship="rootViewController" id="6Ja-ZS-rR6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyj-2Q-Wit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5117.3913043478269" y="-76.339285714285708"/>
+            <point key="canvasLocation" x="775" y="36"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="WtF-co-E2C">
+            <objects>
+                <hostingController id="W9m-zz-SSg" customClass="UserViewController" customModule="ReSto" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4Yx-iB-wge"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqF-LH-sgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="35"/>
         </scene>
         <!--Transactions-->
         <scene sceneID="gMk-ir-CM2">
@@ -386,7 +276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22I-QS-gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692.75362318840587" y="-640.17857142857144"/>
+            <point key="canvasLocation" x="775" y="-640"/>
         </scene>
         <!--Transactions Table View Controller-->
         <scene sceneID="sLF-g4-yuK">
