@@ -47,4 +47,12 @@ class Goal: Codable, Identifiable, JSONGeneratable {
             imageView.imageFromServerURL(URLString, placeHolder: placeholder, completion: completion)
         }
     }
+    
+    func getCurrentAmount() -> String? {
+        return CurrencyFormatter.formatAsEuro(double: Double(self.currentSum))
+    }
+    
+    func getGoalAmount() -> String? {
+        return CurrencyFormatter.formatAsEuro(double: Double(self.goalSum))
+    }
 }

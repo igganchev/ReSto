@@ -27,13 +27,31 @@ struct TransactionTable_Previews: PreviewProvider {
 
 struct TransactionCell : View {
     let transaction: Transaction
+    
     var body: some View {
-        return NavigationLink(destination: TransactionDetail(name: transaction.name, date: transaction.date, sum: String(transaction.sum))) {
+        return NavigationLink(destination: TransactionDetail(transaction: transaction)) {
+            HStack {
                 VStack(alignment: .leading) {
                     Text(transaction.name)
-                    Text(transaction.date)
+                        .font(.headline).padding(.bottom)
+                        .lineLimit(2)
+                    Text(transaction.getDate() ?? "no date")
                         .font(.subheadline)
                 }
+                
+                Spacer()
+                Divider()
+                
+                VStack(alignment: .trailing) {
+                    Text("- \(transaction.getAmount() ?? "$0")")
+                        .foregroundColor(.red)
+                        .fontWeight(.thin)
+                    
+                    Text("saved \(transaction.getSaved() ?? "$0")")
+                        .foregroundColor(.green)
+                        .fontWeight(.bold)
+                }
+            }
         }
     }
 }

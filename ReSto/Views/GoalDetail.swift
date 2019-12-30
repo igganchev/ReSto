@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct GoalView: View {
+struct GoalDetail: View {
     let goal: Goal?
+    
     var name: String?
     var currentSum: Int?
     var goalSum: Int?
@@ -22,13 +23,10 @@ struct GoalView: View {
             self.name = name
         }
         
-        if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum {
+        if let goalSum = goal?.goalSum, let currentSum = goal?.currentSum, let image = goal?.image {
             self.currentSum = currentSum
             self.goalSum = goalSum
             self.percentage = Float(currentSum) / Float(goalSum)
-        }
-        
-        if let image = goal?.image {
             self.image = image
         }
     }
@@ -37,7 +35,7 @@ struct GoalView: View {
     
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinates: "")
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
 
@@ -102,6 +100,6 @@ struct GoalView: View {
 
 struct GoalView_Preview: PreviewProvider {
     static var previews: some View {
-        GoalView(goal: nil)
+        GoalDetail(goal: nil)
     }
 }

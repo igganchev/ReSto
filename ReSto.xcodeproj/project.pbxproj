@@ -29,10 +29,11 @@
 		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
+		CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */; };
 		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
 		CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1E23A62D960078045C /* NetworkManager.swift */; };
 		CCE4EF2123A63A010078045C /* JSONGeneratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF2023A63A010078045C /* JSONGeneratable.swift */; };
-		CCF913AD23A68A9F0024DE42 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913AC23A68A9F0024DE42 /* GoalView.swift */; };
+		CCF913AD23A68A9F0024DE42 /* GoalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913AC23A68A9F0024DE42 /* GoalDetail.swift */; };
 		CCF913AF23A68B010024DE42 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913AE23A68B010024DE42 /* MapView.swift */; };
 		CCF913B123A68B390024DE42 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913B023A68B390024DE42 /* CircleImage.swift */; };
 		CCF913B323A697410024DE42 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF913B223A697410024DE42 /* CircleProgressBar.swift */; };
@@ -65,10 +66,11 @@
 		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
 		CCE4EF1E23A62D960078045C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CCE4EF2023A63A010078045C /* JSONGeneratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGeneratable.swift; sourceTree = "<group>"; };
-		CCF913AC23A68A9F0024DE42 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		CCF913AC23A68A9F0024DE42 /* GoalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetail.swift; sourceTree = "<group>"; };
 		CCF913AE23A68B010024DE42 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CCF913B023A68B390024DE42 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		CCF913B223A697410024DE42 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		A7433F0B2038B33100CAC15B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CCF913AC23A68A9F0024DE42 /* GoalView.swift */,
+				CCF913AC23A68A9F0024DE42 /* GoalDetail.swift */,
 				CCF913AE23A68B010024DE42 /* MapView.swift */,
 				CCF913B023A68B390024DE42 /* CircleImage.swift */,
 				CCF913B223A697410024DE42 /* CircleProgressBar.swift */,
@@ -156,7 +158,7 @@
 				A7DAF8BA200D3EF200801734 /* Assets.xcassets */,
 				A7DAF8BC200D3EF200801734 /* LaunchScreen.storyboard */,
 				A7DAF8B7200D3EF200801734 /* Main.storyboard */,
-				CCE4EF1D23A62D7F0078045C /* Managers */,
+				CCE4EF1D23A62D7F0078045C /* Utilities */,
 				CC29B36A23A59B8000245044 /* Models */,
 				CC3E8FFF23A58B1200D6A31D /* Extensions */,
 				A7433F0720389CAC00CAC15B /* Controllers */,
@@ -189,12 +191,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CCE4EF1D23A62D7F0078045C /* Managers */ = {
+		CCE4EF1D23A62D7F0078045C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				CCE4EF1E23A62D960078045C /* NetworkManager.swift */,
+				CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */,
 			);
-			path = Managers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,11 +331,12 @@
 				CCF913B323A697410024DE42 /* CircleProgressBar.swift in Sources */,
 				CCF913AF23A68B010024DE42 /* MapView.swift in Sources */,
 				CC16CA6723B8E8D000C3B02F /* TransactionDetail.swift in Sources */,
-				CCF913AD23A68A9F0024DE42 /* GoalView.swift in Sources */,
+				CCF913AD23A68A9F0024DE42 /* GoalDetail.swift in Sources */,
 				CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */,
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
 				A7433EFC203840E800CAC15B /* ProfileViewController.swift in Sources */,
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
+				CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
 				CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */,
 				A7433F022038500100CAC15B /* GoalsTableViewController.swift in Sources */,

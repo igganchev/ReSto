@@ -301,11 +301,11 @@
             </objects>
             <point key="canvasLocation" x="-106" y="-170"/>
         </scene>
-        <!--Trending-->
+        <!--My Goals-->
         <scene sceneID="XWY-vB-4ck">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FnA-Fo-jGu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" id="R2T-ZO-VFD"/>
+                    <tabBarItem key="tabBarItem" title="My Goals" image="arrow.up.square.fill" catalog="system" selectedImage="arrow.up.square.fill" id="R2T-ZO-VFD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2bp-dH-9s1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -334,7 +334,7 @@
         <scene sceneID="hDE-8X-AYq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5KM-hK-63w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Goal" id="pJk-Rj-7FC"/>
+                    <tabBarItem key="tabBarItem" title="Add Goal" image="plus.square.fill" catalog="system" selectedImage="plus.square.fill" id="pJk-Rj-7FC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A6h-ra-spv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -353,7 +353,7 @@
         <scene sceneID="e4k-KE-u1H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRj-6O-pot" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Gtq-gD-vNs"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.square.fill" catalog="system" selectedImage="person.crop.square.fill" id="Gtq-gD-vNs"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ANy-Uu-xJo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Mq-61-1IX">
@@ -373,7 +373,7 @@
         <scene sceneID="gMk-ir-CM2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H51-3F-3iL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transactions" id="0Ft-fo-5aI"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="dollarsign.square.fill" catalog="system" selectedImage="dollarsign.square.fill" id="0Ft-fo-5aI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ir5-L7-WNo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -400,7 +400,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.square.fill" catalog="system" width="64" height="56"/>
         <image name="background" width="1280" height="800"/>
         <image name="bitcoinsign.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="dollarsign.square.fill" catalog="system" width="64" height="56"/>
+        <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
+        <image name="plus.square.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

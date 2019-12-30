@@ -74,9 +74,4 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
             }
         }
     }
-
-    
-    func next$(a: Double, n: Double) -> Double {
-        return ceil(a/n) * n;
-    }
 }

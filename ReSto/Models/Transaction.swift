@@ -42,4 +42,31 @@ class Transaction: Codable, Identifiable, JSONGeneratable {
             self.init(name: "", id: 0, date: "", sum: 0, card: "", location: "")
         }
     }
+    
+    func getDate() -> String? {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd.MM, HH:mm"
+
+        if let date = dateFormatterGet.date(from: "2016-02-29 12:24:26") {
+            return dateFormatterPrint.string(from: date)
+        } else {
+            return nil
+        }
+    }
+    
+    func next$(a: Double, n: Double) -> Double {
+        return ceil(a/n) * n;
+    }
+    
+    func getAmount() -> String? {
+        return CurrencyFormatter.formatAsEuro(double: self.sum)
+    }
+    
+    
+    func getSaved() -> String? {
+        return CurrencyFormatter.formatAsEuro(double: self.next$(a: self.sum, n: 5) - self.sum)
+    }
 }

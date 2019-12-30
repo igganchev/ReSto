@@ -8,33 +8,65 @@
 import SwiftUI
 
 struct TransactionDetail: View {
-    var name: String
-    var date: String
-    var sum: String
+    let transaction: Transaction?
+    
+    var name: String?
+    var date: String?
+    var amount: String?
+    var card: String?
+    var location: String?
+
+    init(transaction: Transaction?) {
+        self.transaction = transaction
+        
+        if let name = transaction?.name, let date = transaction?.date, let card = transaction?.card, let location = transaction?.location {
+            self.name = name
+            self.date = date
+            self.card = card
+            self.location = location
+        }
+        
+        if let amount = transaction?.sum {
+            self.amount = CurrencyFormatter.formatAsEuro(double: amount) ?? "$0"
+        }
+    }
+    
+    @State var progressBarValue:CGFloat = 0
     
     var body: some View {
         VStack {
-            Image(name)
-                .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.orange, lineWidth: 4)
-            )
-                .shadow(radius: 10)
-            Text(name)
-                .font(.title)
-            Text(date)
-                .font(.subheadline)
-            Divider()
-            Text(sum)
-                .font(.headline)
-                .multilineTextAlignment(.center)
-                .lineLimit(50)
-        }.padding().navigationBarTitle(Text(name), displayMode: .inline)
+            MapView(coordinates: location)
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 300)
+
+            CircleImage(image: UIImage(named: "placeholder"), width: 250, height: 250)
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            CircleProgressBar(percentage: 1, width: 250, height: 250, lineWidth: 8)
+                .offset(y: -260)
+
+            VStack(alignment: .leading) {
+                Text(name ?? "Transaction name")
+                    .font(.headline)
+                HStack(alignment: .top) {
+                    Text(amount ?? "$0")
+                        .font(.title).bold()
+                    Spacer()
+                    Text(card ?? "*789")
+                        .font(.title).bold()
+                }
+            }
+            .padding().offset(y: -260)
+            
+            Spacer()
+        }
     }
 }
 
-struct TransactionDetail_Previews: PreviewProvider {
+struct TransactionView_Preview: PreviewProvider {
     static var previews: some View {
-        TransactionDetail(name: "Transaction", date: "12.12.2019", sum: "15")
+        TransactionDetail(transaction: nil)
     }
 }
+
