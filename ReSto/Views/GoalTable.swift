@@ -37,19 +37,18 @@ struct GoalCell : View {
             VStack(alignment: .leading) {
                 Text(goal.name)
                     .font(.headline)
-                    .foregroundColor(.secondary)
+                    .fontWeight(.bold)
                     .lineLimit(1)
                 
                 Text("\(String(Int(Float(goal.currentSum) / Float(goal.goalSum)*100)))%")
-                    .font(.headline)
+                    .font(.subheadline)
                     .foregroundColor(.secondary)
                 
                 Divider()
                 
                 Text("\(goal.getCurrentAmount() ?? "$0") / \(goal.getGoalAmount() ?? "$0")")
                     .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primary)
+                    .fontWeight(.medium)
                     .lineLimit(2)
             }.layoutPriority(100)
         }

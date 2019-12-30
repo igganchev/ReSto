@@ -33,11 +33,12 @@ struct TransactionCell : View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(transaction.name)
-                        .font(.headline).padding(.bottom)
+                        .font(.headline)
                         .lineLimit(2)
                     Text(transaction.getDate() ?? "no date")
-                        .font(.subheadline)
-                }
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                }.padding(.bottom).padding(.top)
                 
                 Spacer()
                 Divider()

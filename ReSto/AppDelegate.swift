@@ -9,8 +9,8 @@ import UIKit
 
 var token: Token?
 
-//let serverIp = "http://10.0.1.203:8080"
-let serverIp = "http://localhost:8080"
+let serverIp = "http://10.26.7.181:8080"
+//let serverIp = "http://localhost:8080"
 
 var cachedGoals = [Goal]()
 var cachedUsers = [User]()

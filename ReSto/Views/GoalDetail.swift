@@ -15,7 +15,7 @@ struct GoalDetail: View {
     var goalSum: Int?
     var percentage: Float?
     var image: UIImage?
-
+    
     init(goal: Goal?) {
         self.goal = goal
         
@@ -35,65 +35,76 @@ struct GoalDetail: View {
     
     var body: some View {
         VStack {
-            MapView(coordinates: "")
-                .edgesIgnoringSafeArea(.top)
-                .frame(height: 300)
-
-            CircleImage(image: image, width: 250, height: 250)
-                .offset(y: -130)
-                .padding(.bottom, -130)
             
-            CircleProgressBar(percentage: percentage ?? 0, width: 250, height: 250, lineWidth: 8)
-                .offset(y: -260)
-
-            VStack(alignment: .leading) {
-                Text(name ?? "Goal name")
-                    .font(.headline)
-                HStack(alignment: .top) {
-                    Text("$\(String(currentSum ?? 0)) of $\(String(goalSum ?? 0))")
-                        .font(.title).bold()
-                    Spacer()
-                    Text("\(Int((percentage ?? 0)*100))%")
+            VStack {
+                RectangleImage(image: image, width: 420, height: 500)
+                    .blur(radius: 4)
+                
+                Circle()
+                    .frame(width: 250, height: 250, alignment: .center)
+                    .foregroundColor(.white)
+                    .overlay(
+                        Circle().stroke(Color.white, lineWidth: 8))
+                    .shadow(radius: 10)
+                    .offset(y: -130)
+                
+                CircleProgressBar(percentage: percentage ?? 0, width: 250, height: 250, lineWidth: 12)
+                    .offset(y: -390)
+                
+                Text("\(Int((percentage ?? 0)*100))%")
+                    .font(.largeTitle)
+                    .bold()
+                    .offset(y: -550)
+            }
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(name ?? "Goal name")
+                        .font(.headline)
+                    
+                    Text("\(goal?.getCurrentAmount() ?? "$0") of \(goal?.getGoalAmount() ?? "$0")")
                         .font(.title).bold()
                 }
+                .padding().offset(y: -450)
+                
+                Spacer()
+            }.padding(.bottom, 100)
+            
+            VStack {
+                Button(action: {
+                    // What to perform
+                }) {
+                    Text("Mark as complete")
+                        .fontWeight(.medium)
+                        .frame(width: 250, height: 10)
+                        .font(.headline)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.green, lineWidth: 3))
+                }.offset(y: -450).padding(.bottom, 10)
+                
+                Button(action: {
+                    // What to perform
+                }) {
+                    Text("Delete")
+                        .fontWeight(.medium)
+                        .frame(width: 250, height: 10)
+                        .font(.headline)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.red, lineWidth: 3))
+                }.offset(y: -450)
             }
-            .padding().offset(y: -260)
-            
-            Button(action: {
-                // What to perform
-            }) {
-                Text("Mark as complete")
-                    .fontWeight(.medium)
-                    .frame(width: 250, height: 10)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.green, lineWidth: 3))
-            }.offset(y: -150).padding(.bottom, 10)
-            
-            Button(action: {
-                // What to perform
-            }) {
-                Text("Delete")
-                    .fontWeight(.medium)
-                    .frame(width: 250, height: 10)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.red)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.red, lineWidth: 3))
-            }.offset(y: -150).padding(.bottom, 10)
-
-            Spacer()
         }
     }
 }

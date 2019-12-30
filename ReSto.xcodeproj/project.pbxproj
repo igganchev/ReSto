@@ -29,6 +29,7 @@
 		CC29B36D23A59BAB00245044 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36B23A59BAB00245044 /* Goal.swift */; };
 		CC29B36E23A59BAB00245044 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29B36C23A59BAB00245044 /* User.swift */; };
 		CC3E900123A58B4100D6A31D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */; };
+		CC44831023BA8E8D0052DDA0 /* RectangleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44830F23BA8E8D0052DDA0 /* RectangleImage.swift */; };
 		CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */; };
 		CCE344AC23BA353B004ACCEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE344AB23BA353B004ACCEC /* UserView.swift */; };
 		CCE4EF1C23A625900078045C /* MyUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4EF1B23A625900078045C /* MyUIProgressView.swift */; };
@@ -67,6 +68,7 @@
 		CC29B36B23A59BAB00245044 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = ReSto/Models/Goal.swift; sourceTree = SOURCE_ROOT; };
 		CC29B36C23A59BAB00245044 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ReSto/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		CC3E900023A58B4100D6A31D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		CC44830F23BA8E8D0052DDA0 /* RectangleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImage.swift; sourceTree = "<group>"; };
 		CCE344A923BA18AE004ACCEC /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		CCE344AB23BA353B004ACCEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CCE4EF1B23A625900078045C /* MyUIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIProgressView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				CC16CA6C23B9366300C3B02F /* GoalTable.swift */,
 				CC16CA6E23B94F0500C3B02F /* TableCircleImage.swift */,
 				CCE344AB23BA353B004ACCEC /* UserView.swift */,
+				CC44830F23BA8E8D0052DDA0 /* RectangleImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				CC29B36D23A59BAB00245044 /* Goal.swift in Sources */,
 				A7433EFC203840E800CAC15B /* UserViewController.swift in Sources */,
 				59A82A0C23A5B69F001312C0 /* AddGoalViewController.swift in Sources */,
+				CC44831023BA8E8D0052DDA0 /* RectangleImage.swift in Sources */,
 				CCE344AA23BA18AE004ACCEC /* CurrencyFormatter.swift in Sources */,
 				59A82A0A23A5B341001312C0 /* TransactionList.swift in Sources */,
 				CCE4EF1F23A62D960078045C /* NetworkManager.swift in Sources */,
