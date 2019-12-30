@@ -108,17 +108,16 @@ for (i = 0; i < goals.length; i++) {
   goalIDs.push(i+1);
 }
 
-var users = [
+var user =
     {
         "name": "Ivan Ganchev",
         "id": 1,
         "frequency": 1,
         "roundingUp": 2,
-        "savedTotal": 472.08,
-        "numberOfTransactions": 78,
+        "savedTotal": 0,
+        "numberOfTransactions": 0,
         "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
     }
-]
 
 
 console.log("Generated access token: " + accessToken)
@@ -152,7 +151,7 @@ function onLogin(req, res) {
 
 function onUser(req, res) {
     if(req.headers["access-token"] == accessToken) {
-        setResponse(res, 200, commonHeaders, users[0])
+        setResponse(res, 200, commonHeaders, user)
     } else {
         setResponse(res, 403, {}, "Error")
     }
@@ -205,21 +204,13 @@ function onTransaction(req, res) {
     }
 }
 
-function onAddGoal(req, res) {
+function onAddSaved(req, res) {
     if(req.headers["access-token"] == accessToken) {
         var query = url.parse(req.url, true).query;
-
-        var event = {}
-        event.id = events.length
-        event.name = query.name
-        event.progress = query.progress
-        event['created-by'] = 1
-
-        events.push(event)
-        setResponse(res, 200, commonHeaders, {"id": event.id + 1})
-
-        users[0].events.push(event.id + 1)
-
+        
+        user.savedTotal += query.saved - 0
+        
+        setResponse(res, 200, commonHeaders)
     } else {
         setResponse(res, 403, {}, "Access denied")
     }
@@ -256,6 +247,10 @@ http.createServer(function (req, res) {
             case "/transaction":
                 onTransaction(req, res)
                 break;
+                  
+            case "/addsaved":
+                onAddSaved(req, res)
+                break;
 
             // used to test sent data return the sent data
             case "/test":
@@ -270,8 +265,8 @@ http.createServer(function (req, res) {
     if(req.method == "POST") {
         switch(path) {
 
-            case "/addevent":
-                onAddEvent(req, res)
+            case "/addsaved":
+                onAddSaved(req, res)
                 break;
 
             // no such option

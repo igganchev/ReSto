@@ -22,6 +22,8 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         loadData()
+        print("here")
+        saved = 15
     }
     
     func loadTransactions(completion: @escaping () -> Void) {

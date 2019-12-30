@@ -76,4 +76,21 @@ class NetworkManager {
             imageView.imageFromServerURL(URLString, placeHolder: placeholder, completion: completion)
         }
     }
+    
+    static func add(descriptor: String, parameters: Parameters, completion: @escaping (_ json: String) -> Void) {
+        guard let t = token?.accessToken else { return }
+        
+        Alamofire.request(
+            URL(string: serverIp + "/\(descriptor)")!,
+            method: .get,
+            parameters: parameters,
+            headers: ["access-token": t])
+            .validate()
+            .responseString { (response) in
+                guard response.result.isSuccess else {
+                    print("Error response: \(String(describing: response.result.error))")
+                    return
+                }
+        }
+    }
 }

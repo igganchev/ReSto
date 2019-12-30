@@ -17,6 +17,7 @@ extension UIImageView {
         self.image = nil
         if let cachedImage = imageCache.object(forKey: NSString(string: URLString)) {
             self.image = cachedImage
+            completion(cachedImage)
             return
         }
 

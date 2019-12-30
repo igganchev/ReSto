@@ -16,6 +16,16 @@ var cachedGoals = [Goal]()
 var cachedUsers = [User]()
 var cachedTransactions = [Transaction]()
 
+var savedChanged = false
+var saved: Double = 0 {
+    didSet {
+        NetworkManager.add(descriptor: "addsaved", parameters: ["saved": saved]) { (str) in
+            print(str)
+        }
+        savedChanged = true
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

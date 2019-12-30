@@ -29,10 +29,12 @@ class UserViewController: UIHostingController<UserView>  {
             do {
                 let user = try User(json)
                 
-                NetworkManager.getImage(fromURL: user.imageStr) { [weak self] image in
+                NetworkManager.getImage(fromURL: user.imageStr) { [weak self] image in                    
                     user.image = image
                     self?.user = user
                     self?.rootView = UserView(user: self?.user)
+                    
+                    savedChanged = false
                 }
             } catch {
                 print("Could not parse response")
@@ -41,7 +43,7 @@ class UserViewController: UIHostingController<UserView>  {
     }
     
     func loadData() {
-        if let user = self.user {
+        if let user = self.user, !savedChanged {
             self.rootView = UserView(user: user)
         } else {
             loadUser()

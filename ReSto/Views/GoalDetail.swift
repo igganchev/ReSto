@@ -62,7 +62,7 @@ struct GoalDetail: View {
                     Text(name ?? "Goal name")
                         .font(.headline)
                     
-                    Text("\(goal?.getCurrentAmount() ?? "$0") of \(goal?.getGoalAmount() ?? "$0")")
+                    Text("\(goal?.getCurrentAmount() ?? "$0") / \(goal?.getGoalAmount() ?? "$0")")
                         .font(.title).bold()
                 }
                 .padding().offset(y: -450)
