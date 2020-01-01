@@ -11,6 +11,7 @@ class Transaction: Codable, Identifiable, JSONGeneratable {
     
     let name: String
     let id: Int
+    let user_id: Int?
     let date: String
     let sum: Double
     let card: String
@@ -19,15 +20,17 @@ class Transaction: Codable, Identifiable, JSONGeneratable {
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case id = "id"
+        case user_id = "user_id"
         case date = "date"
         case sum = "sum"
         case card = "card"
         case location = "location"
     }
     
-    init(name: String, id: Int, date: String, sum: Double, card: String, location:String) {
+    init(name: String, id: Int, user_id: Int?, date: String, sum: Double, card: String, location:String) {
         self.name = name
         self.id = id
+        self.user_id = user_id
         self.date = date
         self.sum = sum
         self.card = card
@@ -37,9 +40,9 @@ class Transaction: Codable, Identifiable, JSONGeneratable {
     required convenience init(data: Data) throws {
         let arr = try JSONDecoder().decode(Array<Transaction>.self, from: data)
         if let me = arr.first {
-            self.init(name: me.name, id: me.id, date: me.date, sum: me.sum, card: me.card, location: me.location)
+            self.init(name: me.name, id: me.id, user_id: me.user_id, date: me.date, sum: me.sum, card: me.card, location: me.location)
         } else {
-            self.init(name: "", id: 0, date: "", sum: 0, card: "", location: "")
+            self.init(name: "", id: 0, user_id: 0, date: "", sum: 0, card: "", location: "")
         }
     }
     
@@ -50,7 +53,7 @@ class Transaction: Codable, Identifiable, JSONGeneratable {
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "dd.MM, HH:mm"
 
-        if let date = dateFormatterGet.date(from: "2016-02-29 12:24:26") {
+        if let date = dateFormatterGet.date(from: date) {
             return dateFormatterPrint.string(from: date)
         } else {
             return nil

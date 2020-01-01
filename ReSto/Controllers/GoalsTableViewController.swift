@@ -61,13 +61,25 @@ class GoalsTableViewController: UIHostingController<GoalTable> {
             if let goalList = self?.goalList {
                 if let goals = self?.goals, goalList.ids.containsSameElements(as: goals.map {$0.id}) {
                     self?.rootView = GoalTable(goals: goals)
+                } else if let goals = self?.goals {
+                    let difference = goalList.ids.difference(from: goals.map {$0.id})
+                    
+                    for goalID in difference {
+                        self?.loadGoal(id: goalID)
+                    }
+                    
+                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                        if let goals = self?.goals {
+                            self?.rootView = GoalTable(goals: goals)
+                        }
+                    }
                 } else {
                     self?.goals = []
-
+                    
                     for goalID in goalList.ids {
                         self?.loadGoal(id: goalID)
                     }
-            
+                    
                     self?.dispatchGroup.notify(queue: .main) { [weak self] in
                         if let goals = self?.goals {
                             self?.rootView = GoalTable(goals: goals)

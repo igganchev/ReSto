@@ -9,22 +9,22 @@ import UIKit
 
 var token: Token?
 
-let serverIp = "http://10.26.7.181:8080"
-//let serverIp = "http://localhost:8080"
+//let serverIp = "http://10.26.7.181:8080"
+let serverIp = "http://localhost:8080"
 
 var cachedGoals = [Goal]()
 var cachedUsers = [User]()
 var cachedTransactions = [Transaction]()
 
 var savedChanged = false
-var saved: Double = 0 {
-    didSet {
-        NetworkManager.add(descriptor: "addsaved", parameters: ["saved": saved]) { (str) in
-            print(str)
-        }
-        savedChanged = true
-    }
-}
+//var saved: Double = 0 {
+//    didSet {
+//        NetworkManager.add(descriptor: "addsaved", parameters: ["saved": saved]) { (str) in
+//            print(str)
+//        }
+//        savedChanged = true
+//    }
+//}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -26,7 +26,7 @@ class User: Codable, JSONGeneratable {
         case roundingUp = "roundingUp"
         case savedTotal = "savedTotal"
         case numberOfTransactions = "numberOfTransactions"
-        case imageStr = "profile-pic"
+        case imageStr = "profilePic"
     }
     
     init(name: String, id: Int, frequency: Int, roundingUp: Int, savedTotal: Double, numberOfTransactions: Int, imageStr: String) {
@@ -40,7 +40,7 @@ class User: Codable, JSONGeneratable {
     }
     
     required convenience init(data: Data) throws {
-        let me = try JSONDecoder().decode(User.self, from: data)
+        let me = try JSONDecoder().decode([User].self, from: data).first!
         self.init(name: me.name, id: me.id, frequency: me.frequency, roundingUp: me.roundingUp, savedTotal: me.savedTotal, numberOfTransactions: me.numberOfTransactions, imageStr: me.imageStr)
     }
 }

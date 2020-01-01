@@ -37,6 +37,7 @@ class UserViewController: UIHostingController<UserView>  {
                     savedChanged = false
                 }
             } catch {
+                print(error)
                 print("Could not parse response")
             }
         }

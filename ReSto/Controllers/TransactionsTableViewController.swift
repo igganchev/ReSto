@@ -22,8 +22,6 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         loadData()
-        print("here")
-        saved = 15
     }
     
     func loadTransactions(completion: @escaping () -> Void) {
@@ -48,9 +46,18 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
                 cachedTransactions.append(transaction)
                 
                 self?.transactions.append(transaction)
+                
+                
+                NetworkManager.getAll(descriptor: "savedtransactionids") { [weak self] (json) in
+                    let savedTransactionIDs = self?.extractSavedTransactionIDs(from: json)
+                    if !(savedTransactionIDs?.contains(transaction.id))! {
+                        self?.addSaved(transaction: transaction)
+                    }
+                }
+                
                 self?.dispatchGroup.leave()
             } catch {
-                print("Could not parse response")
+                print(error)
             }
         }
     }
@@ -60,13 +67,25 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
             if let transactionList = self?.transactionList {
                 if let transactions = self?.transactions, transactionList.ids.containsSameElements(as: transactions.map {$0.id}) {
                     self?.rootView = TransactionTable(transactions: transactions)
+                } else if let transactions = self?.transactions {
+                    let difference = transactionList.ids.difference(from: transactions.map {$0.id})
+                    
+                    for transactionID in difference {
+                        self?.loadTransaction(id: transactionID)
+                    }
+                    
+                    self?.dispatchGroup.notify(queue: .main) { [weak self] in
+                        if let transactions = self?.transactions {
+                            self?.rootView = TransactionTable(transactions: transactions)
+                        }
+                    }
                 } else {
                     self?.transactions = []
-
+                    
                     for transactionID in transactionList.ids {
                         self?.loadTransaction(id: transactionID)
                     }
-            
+                    
                     self?.dispatchGroup.notify(queue: .main) { [weak self] in
                         if let transactions = self?.transactions {
                             self?.rootView = TransactionTable(transactions: transactions)
@@ -75,5 +94,27 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
                 }
             }
         }
+    }
+    
+    func addSaved(transaction: Transaction) {
+        let saved = transaction.next$(a: transaction.sum, n: 5) - transaction.sum
+        NetworkManager.add(descriptor: "addsaved", parameters: ["saved": saved, "transactionID": transaction.id]) {_ in }
+        savedChanged = true
+    }
+    
+    func extractSavedTransactionIDs(from json: String) -> [Int] {
+        if let data = json.data(using: .utf8) {
+            do {
+                let myJson = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as Any
+                
+                if let dict = myJson as? [[String: Int]] {
+                    return dict.map {($0.first?.value ?? 0)}
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        return [Int]()
     }
 }

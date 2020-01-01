@@ -23,19 +23,30 @@ function createDB() {
       password: "ISpanski97",
       database: "TransactionsDB"
     });
+    
+    var sql = "CREATE TABLE IF NOT EXISTS User (name VARCHAR(255), id INT NOT NULL AUTO_INCREMENT, frequency INT, roundingUp INT, savedTotal DOUBLE, numberOfTransactions INT, profilePic VARCHAR(265), PRIMARY KEY (id))";
+         
+       con.query(sql, function (err, result) {
+           if (err) throw err;
+       });
+       
+       var sql = "INSERT INTO User (name, frequency, roundingUp, savedTotal, numberOfTransactions, profilePic) VALUES ('Ivan Ganchev', 1, 2, 0, 0, 'https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE=');";
+       
+       con.query(sql, function (err, result) {
+           if (err) throw err;
+       });
 
-    var sql = "CREATE TABLE IF NOT EXISTS Transactions (name VARCHAR(255), id MEDIUMINT NOT NULL AUTO_INCREMENT, date VARCHAR(256), sum DOUBLE, card VARCHAR(256), location VARCHAR(256), PRIMARY KEY (id))";
+    var sql = "CREATE TABLE IF NOT EXISTS Transactions (name VARCHAR(255), id INT NOT NULL AUTO_INCREMENT, user_id INT, date VARCHAR(256), sum DOUBLE, card VARCHAR(256), location VARCHAR(256), index pn_user_index(`user_id`), foreign key (`user_id`) references User(`id`) on delete cascade, PRIMARY KEY (id))";
       
     con.query(sql, function (err, result) {
         if (err) throw err;
     });
     
-    var sql = "INSERT INTO Transactions (name, date, sum, card, location) VALUES ('BGR SOFIA SHELL PODUENE', '2019-12-13 13:14:07', '81.84', 'Visa *0367', '42.696381 23.355913'),('BGR SOFIYA FANTASTIKO 28', '2019-12-12 10:47:13', '2.29', 'Visa *0367', '42.679714 23.367812'),('BGR SOFIA HAPPY BAR GRILL', '2019-12-11 21:34:15', '38.65', 'Visa *0367', '42.648145 23.379201');";
+    var sql = "INSERT INTO Transactions (name, user_id, date, sum, card, location) VALUES ('BGR SOFIA SHELL PODUENE', NULL, '2019-12-13 13:14:07', '81.84', 'Visa *0367', '42.696381 23.355913'),('BGR SOFIYA FANTASTIKO 28', NULL, '2019-12-12 10:47:13', '2.29', 'Visa *0367', '42.679714 23.367812'),('BGR SOFIA HAPPY BAR GRILL', NULL, '2019-12-11 21:34:15', '38.65', 'Visa *0367', '42.648145 23.379201');";
     
     con.query(sql, function (err, result) {
         if (err) throw err;
     });
-
 }
 
 function selectAllTransactionsFromDB(callback) {
@@ -58,6 +69,37 @@ function selectByIDFromDB(id, callback) {
         callback(result);
     });
 }
+
+function getUserFromDB(callback) {
+    con.query("SELECT * FROM User WHERE id = 1", function (err, result, fields) {
+        if (err) throw err;
+        callback(result);
+    });
+}
+
+function insertSettingsIntoDB(frequency, roundingUp) {
+    con.query("UPDATE User SET frequency = " + mysql.escape(frequency) + ", roundingUp = " + mysql.escape(roundingUp) + " WHERE id = 1", function (err, result, fields) {
+        if (err) throw err;
+    });
+}
+
+function insertSavedTotalIntoDB(savedTotal, transactionID) {
+    con.query("UPDATE User SET savedTotal = savedTotal + " + mysql.escape(savedTotal) + ", numberOfTransactions = numberOfTransactions + 1 WHERE id = 1", function (err, result, fields) {
+        if (err) throw err;
+    });
+    
+    con.query("UPDATE Transactions SET user_id = 1 WHERE id = " + mysql.escape(transactionID), function (err, result, fields) {
+           if (err) throw err;
+       });
+}
+
+function getSavedTransactionIDsFromDB(callback) {
+    con.query("SELECT tr.`id` FROM `User` as u, `Transactions` as tr WHERE tr.`user_id`=u.`id`", function (err, result, fields) {
+        if (err) throw err;
+        callback(result);
+    });
+}
+
 
 createDB();
 
@@ -108,18 +150,6 @@ for (i = 0; i < goals.length; i++) {
   goalIDs.push(i+1);
 }
 
-var user =
-    {
-        "name": "Ivan Ganchev",
-        "id": 1,
-        "frequency": 1,
-        "roundingUp": 2,
-        "savedTotal": 0,
-        "numberOfTransactions": 0,
-        "profile-pic": "https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id640021202?k=6&m=640021202&s=612x612&w=0&h=M7WeXoVNTMI6bT404CHStTAWy_2Z_3rPtAghUXwn2rE="
-    }
-
-
 console.log("Generated access token: " + accessToken)
 
 commonHeaders = {
@@ -150,11 +180,13 @@ function onLogin(req, res) {
 }
 
 function onUser(req, res) {
-    if(req.headers["access-token"] == accessToken) {
-        setResponse(res, 200, commonHeaders, user)
-    } else {
-        setResponse(res, 403, {}, "Error")
-    }
+   if(req.headers["access-token"] == accessToken) {
+       getUserFromDB( function (result) {
+           setResponse(res, 200, commonHeaders, result)
+       });
+   } else {
+       setResponse(res, 403, {}, "Error")
+   }
 }
 
 function onGoals(req, res) {
@@ -208,11 +240,33 @@ function onAddSaved(req, res) {
     if(req.headers["access-token"] == accessToken) {
         var query = url.parse(req.url, true).query;
         
-        user.savedTotal += query.saved - 0
+        insertSavedTotalIntoDB(query.saved-0, query.transactionID-0)
         
         setResponse(res, 200, commonHeaders)
     } else {
         setResponse(res, 403, {}, "Access denied")
+    }
+}
+
+function onAddSettings(req, res) {
+    if(req.headers["access-token"] == accessToken) {
+        var query = url.parse(req.url, true).query;
+        
+        insertSettingsIntoDB(query.frequency-0, query.roundingUp-0)
+        
+        setResponse(res, 200, commonHeaders)
+    } else {
+        setResponse(res, 403, {}, "Access denied")
+    }
+}
+
+function onSavedTransactionIDs(req, res) {
+    if(req.headers["access-token"] == accessToken) {
+        getSavedTransactionIDsFromDB( function (result) {
+            setResponse(res, 200, commonHeaders, result)
+        });
+    } else {
+        setResponse(res, 403, {}, "Error")
     }
 }
 
@@ -248,8 +302,16 @@ http.createServer(function (req, res) {
                 onTransaction(req, res)
                 break;
                   
+            case "/savedtransactionids":
+                onSavedTransactionIDs(req, res)
+                break;
+                  
             case "/addsaved":
                 onAddSaved(req, res)
+                break;
+                  
+            case "/addsettings":
+                onAddSettings(req, res)
                 break;
 
             // used to test sent data return the sent data
@@ -267,6 +329,10 @@ http.createServer(function (req, res) {
 
             case "/addsaved":
                 onAddSaved(req, res)
+                break;
+                  
+            case "/addsettings":
+                onAddSettings(req, res)
                 break;
 
             // no such option
