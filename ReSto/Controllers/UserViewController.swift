@@ -32,6 +32,7 @@ class UserViewController: UIHostingController<UserView>  {
                 NetworkManager.getImage(fromURL: user.imageStr) { [weak self] image in                    
                     user.image = image
                     self?.user = user
+                    globalUser = user
                     self?.rootView = UserView(user: self?.user)
                     
                     savedChanged = false

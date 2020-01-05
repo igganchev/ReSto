@@ -36,14 +36,14 @@ function createDB() {
            if (err) throw err;
        });
 
-    var sql = "CREATE TABLE IF NOT EXISTS Transactions (name VARCHAR(255), id INT NOT NULL AUTO_INCREMENT, user_id INT, date VARCHAR(256), sum DOUBLE, card VARCHAR(256), location VARCHAR(256), index pn_user_index(`user_id`), foreign key (`user_id`) references User(`id`) on delete cascade, PRIMARY KEY (id))";
+    var sql = "CREATE TABLE IF NOT EXISTS Transactions (name VARCHAR(255), id INT NOT NULL AUTO_INCREMENT, user_id INT, date VARCHAR(256), sum DOUBLE, card VARCHAR(256), latitude VARCHAR(256), longitude VARCHAR(256), index pn_user_index(`user_id`), foreign key (`user_id`) references User(`id`) on delete cascade, PRIMARY KEY (id))";
       
     con.query(sql, function (err, result) {
         if (err) throw err;
     });
     
-    var sql = "INSERT INTO Transactions (name, user_id, date, sum, card, location) VALUES ('BGR SOFIA SHELL PODUENE', NULL, '2019-12-13 13:14:07', '81.84', 'Visa *0367', '42.696381 23.355913'),('BGR SOFIYA FANTASTIKO 28', NULL, '2019-12-12 10:47:13', '2.29', 'Visa *0367', '42.679714 23.367812'),('BGR SOFIA HAPPY BAR GRILL', NULL, '2019-12-11 21:34:15', '38.65', 'Visa *0367', '42.648145 23.379201');";
-    
+    var sql = "INSERT INTO Transactions (name, user_id, date, sum, card, latitude, longitude) VALUES ('BGR SOFIA SHELL PODUENE', NULL, '2019-12-13 13:14:07', '81.84', 'Visa *0367', '42.696381', '23.355913'),('BGR SOFIYA FANTASTIKO 28', NULL, '2019-12-12 10:47:13', '2.29', 'Visa *0367', '42.679714', '23.367812'),('BGR SOFIA HAPPY BAR GRILL', NULL, '2019-12-11 21:34:15', '38.65', 'Visa *0367', '42.648145', '23.379201');";
+            
     con.query(sql, function (err, result) {
         if (err) throw err;
     });

@@ -96,6 +96,7 @@ struct UserView: View {
                             .pickerStyle(SegmentedPickerStyle()).padding(.bottom, 35)
                             .onReceive([self.roundingUp].publisher.first()) { (value) in
                                 NetworkManager.add(descriptor: "addsettings", parameters: ["frequency": self.frequency, "roundingUp": value]) {_ in }
+                                NetworkManager.loadUser()
                             }
                             
                             Text("Payout frequency:")
@@ -110,6 +111,7 @@ struct UserView: View {
                             .pickerStyle(SegmentedPickerStyle())
                             .onReceive([self.frequency].publisher.first()) { (value) in
                                 NetworkManager.add(descriptor: "addsettings", parameters: ["frequency": value, "roundingUp": self.roundingUp]) {_ in }
+                                NetworkManager.loadUser()
                             }
                         }
                     }

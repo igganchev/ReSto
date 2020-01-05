@@ -14,16 +14,18 @@ struct TransactionDetail: View {
     var date: String?
     var amount: String?
     var card: String?
-    var location: String?
+    var latitude: String?
+    var longitude: String?
 
     init(transaction: Transaction?) {
         self.transaction = transaction
         
-        if let name = transaction?.name, let date = transaction?.date, let card = transaction?.card, let location = transaction?.location {
+        if let name = transaction?.name, let date = transaction?.date, let card = transaction?.card, let latitude = transaction?.latitude, let longitude = transaction?.longitude {
             self.name = name
             self.date = date
             self.card = card
-            self.location = location
+            self.latitude = latitude
+            self.longitude = longitude
         }
         
         if let amount = transaction?.sum {
@@ -35,7 +37,7 @@ struct TransactionDetail: View {
     
     var body: some View {
         VStack {
-            MapView(coordinates: location)
+            MapView(latitudeString: latitude, longitudeString: longitude)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
 

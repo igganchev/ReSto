@@ -93,4 +93,22 @@ class NetworkManager {
                 }
         }
     }
+    
+    static func loadUser() {
+        NetworkManager.getAll(descriptor: "userinfo") { json in
+                   do {
+                       let user = try User(json)
+                       
+                       NetworkManager.getImage(fromURL: user.imageStr) { image in
+                           user.image = image
+                           globalUser = user
+                           
+                           savedChanged = false
+                       }
+                   } catch {
+                       print(error)
+                       print("Could not parse response")
+                   }
+               }
+    }
 }

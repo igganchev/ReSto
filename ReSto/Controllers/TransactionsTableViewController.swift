@@ -97,7 +97,7 @@ class TransactionsTableViewController: UIHostingController<TransactionTable> {
     }
     
     func addSaved(transaction: Transaction) {
-        let saved = transaction.next$(a: transaction.sum, n: 5) - transaction.sum
+        let saved = transaction.next$(a: transaction.sum, n: Double(globalUser?.roundingUpValue ?? 0)) - transaction.sum
         NetworkManager.add(descriptor: "addsaved", parameters: ["saved": saved, "transactionID": transaction.id]) {_ in }
         savedChanged = true
     }

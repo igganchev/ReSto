@@ -13,19 +13,8 @@ struct MapView: UIViewRepresentable {
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
     
-    init(coordinates: String?) {
-        guard let coordinates = coordinates else {
-            self.latitude = 34.011286
-            self.longitude = -116.166868
-            return
-        }
-        
-        let coordinatesArray = coordinates.split(separator: " ")
-        
-        if let arrayFirst = coordinatesArray.first, let arrayLast = coordinatesArray.last {
-            let latitudeString = String(arrayFirst)
-            let longitudeString = String(arrayLast)
-            
+    init(latitudeString: String?, longitudeString: String?) {
+        if let latitudeString = latitudeString, let longitudeString = longitudeString {
             if let latitudeDouble = Double(latitudeString), let longitudeDouble = Double(longitudeString) {
                 self.latitude = CLLocationDegrees(exactly: latitudeDouble)
                 self.longitude = CLLocationDegrees(exactly: longitudeDouble)
@@ -52,6 +41,6 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Preview: PreviewProvider {
     static var previews: some View {
-        MapView(coordinates: "34.011286 -116.166868")
+        MapView(latitudeString: "34.011286", longitudeString: "-116.166868")
     }
 }

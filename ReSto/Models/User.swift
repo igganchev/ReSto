@@ -19,6 +19,9 @@ class User: Codable, JSONGeneratable {
     
     var image: UIImage? = nil
     
+    var roundingUpValue: Int? = nil
+    private let roundingUpValues = [1, 5, 10]
+    
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case id = "id"
@@ -37,6 +40,8 @@ class User: Codable, JSONGeneratable {
         self.savedTotal = savedTotal
         self.numberOfTransactions = numberOfTransactions
         self.imageStr = imageStr
+        
+        self.roundingUpValue = self.roundingUpValues[self.roundingUp]
     }
     
     required convenience init(data: Data) throws {
