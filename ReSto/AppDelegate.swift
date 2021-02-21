@@ -9,8 +9,7 @@ import UIKit
 
 var token: Token?
 
-//let serverIp = "http://10.26.7.181:8080"
-let serverIp = "http://localhost:8080"
+let serverIp = "http://resto-env.eba-mqhhpczx.us-east-1.elasticbeanstalk.com"
 
 var cachedGoals = [Goal]()
 var globalUser: User?
@@ -49,7 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    // Lock the orientation to Portrait mode
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
+    }
 
 }
 
